@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- -------------------bootstrap link--------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- ---------------------google fonts--------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <!-- ------------------------local-------------- -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Zakat Calculator</title>
+</head>
+
+<body>
+    <!-- ------------ navebar ------------ -->
+    <nav class="navbar navbar-expand-lg text-center">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: Arial, Helvetica, sans-serif;" href="http://kmwf.in/"
+                target="_blank">Khadim-e-millat Welfare Foundation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <select name="languages" class="text-center my-3" id="lang" onchange="language()">
+                    <option value="u" selected>اردو</option>
+                    <option value="ru">Roman Urdu</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------ head --------------- -->
+
+    <div class="head text-center my-3 mx-2">
+        <div class="primary text-center my-3">
+            <h1>زکوٰۃ کی ادائیگی کے لیے مدد گار کیلکولیٹر</h1>
+        </div>
+        <div class="secondry text-center my-3">
+            <p>سب سے پہلے زکوٰۃ واجب ہونے کی قمری تاریخ کا تعین کر لیں۔ زکوٰۃ واجب ہونے کی قمری اسٍلامی تاریخ۔۔۔ پکی
+                اکوٰۃ کی مقررہ تاریخ آجائے تو اس دن اپنے تمام مال کا حساب مارکیٹ ریٹ کے مطابق یوں کریں</p>
+        </div>
+    </div>
+
+    <!-- ------------- table -------- -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">رقم</th>
+                <th scope="col">مالی ذمہ داریاں</th>
+                <th scope="col">رقم</th>
+                <th scope="col">قابل زکوٰۃ اثاثوں کی مالیت</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="1"></td>
+                <td class="zimma">لیا ہوا قرضہ</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="01"></td>
+                <td>سونا (چاہے کسی بھی صورت میں ہو)</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="2"></td>
+                <td class="zimma">بیوی کا غیر ادا شدہ مہر</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="02"></td>
+                <td>چاندی (چاہے کسی بھی صورت میں ہو)</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="3"></td>
+                <td class="zimma">بجلی کا واجب الادا بل</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="03"></td>
+                <td>نقد کیش (کسی بھی مقصد کے لیے ہو)</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="4"></td>
+                <td class="zimma">گیس کا واجب الادا بل</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="04"></td>
+                <td>بینک بیلنس</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="5"></td>
+                <td class="zimma">پانی کا واجب الادا بل</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="05"></td>
+                <td>کسی کو ادھار یا امانت دی گئی رقم</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="6"></td>
+                <td class="zimma">ٹیلی فون کا واجب الادا بل</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="06"></td>
+                <td>سیکورٹی میں دی گئی رقم</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="7"></td>
+                <td class="zimma">مکان کا واجب الادا کرایہ</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="07"></td>
+                <td>انشورنس پالیسی میں اصل جمع شدہ رقم</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="8"></td>
+                <td class="zimma">دوکان کا واجب الادا کرایہ</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="08"></td>
+                <td>غیر ملکی کرنسی (موجودہ ریٹ کے مطابق) <br><a target="_blank"
+                        href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">Currency
+                        Converter 🔗</a></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="9"></td>
+                <td class="zimma">گودام کا واجب الادا کرایہ</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="09"></td>
+                <td>بانڈز، مختلف سرٹیفکٹ</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="10"></td>
+                <td class="zimma">دیگر واجب الادا اخراجات</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="010"></td>
+                <td>وصول شدہ پروڈنٹ فنڈ</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="mali zimma dariyan" id="11"></td>
+                <td class="zimma">ملازمین کی واجب الادا تنخواہیں</td>
+                <td><input type="number" name="qabile zakat asason ki maliyat" class="maliyat" id="011"></td>
+                <td>دوکان/ گودام میں موجودہ مال، تیّار مال کا اسٹاک</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 200%;"><input type="number" name="qabile zakat asason ki maliyat"
+                        class="maliyat" id="012" style="width: 10rem;"></td>
+                <td colspan="2" style="width: 200%;">بیچنے کی نیت سے خریدی گئی دکان، پلاٹ، گاڑی، خام مال (جس کی قیمت ادا
+                    کر دی گئی ہو)</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- -----------------------results------------ -->
+    <div class="result my-3" id="result">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="zimmedariyan"></td>
+                    <td>کل ذمہ داریاں</td>
+                    <td id="milkiyat"></td>
+                    <td>کل مالیت</td>
+                </tr>
+                <tr>
+                    <td id="total"></td>
+                    <td>کل ملکیت</td>
+                    <td id="zakat"></td>
+                    <td>زکوٰۃ کی واجب الادا رقم</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center my-3">
+        <button class="btn btn-primary" id="calculate" onclick="calculate()">حساب کریں</button>
+    </div>
+
+    <div class="secondry text-center my-3 mx-2">
+        <p>جب آپ سب چیزوں کے سامنے رقم کا خانہ پر کرلیں تو نمبر دو کی ٹوٹل رقم کونمبرایک کی ٹوٹل رقم سے منہا ( مائنس )
+            کرلیں۔ باقی جو رقم بچے آپ نے صرف اس کی زکوٰۃ ڑھائی فیصد (2.5) یعنی چالیسواں حصہ ادا کرنی ہے۔ جیسے ایک لاکھ
+            روپے میں سے 2500 روپے۔
+        </p>
+    </div>
+
+
+    <!-- ------------- end of body ----------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

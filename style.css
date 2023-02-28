@@ -1,0 +1,70 @@
+body {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    line-height: 2;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: transparent;
+  -moz-appearance: textfield;
+}
+
+.table {
+    text-align: end;
+}
+
+tr th,
+tr td {
+    width: 24vw;
+    margin: 0.25vw;
+    text-align: center;
+}
+
+td input[type=number] {
+    width: 5rem;
+    font-family: "arial";
+    text-align: center;
+}
+
+#zimmedariyan,
+#milkiyat,
+#total,
+#zakat {
+    font-family: "arial";
+}
+
+td input[type=number]::selection {
+    background-color: black;
+    color: white;
+}
+
+tr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+tr td,
+tr th {
+    border: none;
+}
+
+.zimma {
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+#result {
+    display: none;
+}
