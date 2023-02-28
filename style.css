@@ -6,6 +6,17 @@ body {
     background-opacity: 0.2;
 }
 
+.logo {
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto auto;
+    background-color: #fdfdfd;
+    border-radius: 20px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
