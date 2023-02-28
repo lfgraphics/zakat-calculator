@@ -49,5 +49,5 @@ function calculate() {
         return (num / 100) * per;
     }
 
-    document.getElementById("zakat").innerText = percentage(maliyat - zimmadar, 2.5)
+    document.getElementById("zakat").innerText = percentage(maliyat - zimmadar, 2.5).toFixed(2)
 }
