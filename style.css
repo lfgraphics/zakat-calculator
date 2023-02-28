@@ -1,6 +1,9 @@
 body {
     font-family: 'Noto Nastaliq Urdu', serif;
     line-height: 2;
+    background-image: url(/logo.png);
+    background-repeat: none;
+    background-opacity: 0.2;
 }
 
 /* Chrome, Safari, Edge, Opera */
