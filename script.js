@@ -2,7 +2,7 @@ function language() {
     let language = document.getElementById("lang").value;
 
     if (language == "u") {
-        window.open('/', '_self');
+        window.open('/zakat-calculator', '_self');
     } else {
         window.open('r-urdu.htm', '_self');
     }
