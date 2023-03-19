@@ -21,8 +21,7 @@ function calculate() {
         Number(document.getElementById("08").value) +
         Number(document.getElementById("09").value) +
         Number(document.getElementById("010").value) +
-        Number(document.getElementById("011").value) +
-        Number(document.getElementById("012").value)
+        Number(document.getElementById("011").value)
     ];
 
     let zimmadar = [
