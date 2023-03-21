@@ -39,14 +39,39 @@ function calculate() {
     ];
 
     document.getElementById("result").style.display = "block";
-    document.getElementById('zimmedariyan').innerText = zimmadar.toFixed(2);
-    document.getElementById('milkiyat').innerText = maliyat.toFixed(2);
+    document.getElementById('zimmedariyan').innerText = Number(zimmadar).toFixed(2);
+    document.getElementById('milkiyat').innerText = Number(maliyat).toFixed(2);
 
-    document.getElementById("total").innerText = maliyat - zimmadar.toFixed(2);
+    document.getElementById("total").innerText = Number(maliyat) - Number(zimmadar).toFixed(2);
 
     function percentage(num, per) {
         return (num / 100) * per;
     }
 
-    document.getElementById("zakat").innerText = percentage(maliyat - zimmadar, 2.5).toFixed(2);
+    document.getElementById("zakat").innerText = percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2);
 }
+
+// ----------- calculator-input --------------
+
+$(document).ready(function() {
+    // Add input event listener to all input fields with class "calculator-input"
+    $('.calculator-input').on('change', function() {
+        // Get the input value
+        var inputVal = $(this).val();
+        // Check if the input contains any non-mathematical characters
+        if (/[^\d()+\-*/.\s]/.test(inputVal)) {
+            // Clear the input field if there are any non-mathematical characters
+            $(this).val('');
+            return;
+        }
+        // Evaluate the input as a mathematical expression
+        try {
+            var result = eval(inputVal);
+            // Set the input field value to the result of the calculation
+            $(this).val(result);
+        } catch (error) {
+            // If there is an error in the calculation, clear the input field
+            $(this).val('');
+        }
+    });
+});

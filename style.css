@@ -35,7 +35,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type=text] {
     text-align: center;
     appearance: transparent;
     -moz-appearance: textfield;
@@ -51,7 +51,7 @@ tr td {
     margin: 0.25vw;
     text-align: center;
 }
-input[type=number] {
+input[type=text] {
     /* width: 60px; */
     font-family: "arial";
     text-align: center;
@@ -64,7 +64,7 @@ input[type=number] {
     font-family: "arial";
 }
 
-td input[type=number]::selection {
+td input[type=text]::selection {
     background-color: black;
     color: white;
 }
