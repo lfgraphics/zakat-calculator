@@ -39,14 +39,14 @@ function calculate() {
     ];
 
     document.getElementById("result").style.display = "block";
-    document.getElementById('zimmedariyan').innerText = zimmadar;
-    document.getElementById('milkiyat').innerText = maliyat;
+    document.getElementById('zimmedariyan').innerText = zimmadar.toFixed(2);
+    document.getElementById('milkiyat').innerText = maliyat.toFixed(2);
 
-    document.getElementById("total").innerText = maliyat - zimmadar
+    document.getElementById("total").innerText = maliyat - zimmadar.toFixed(2);
 
     function percentage(num, per) {
         return (num / 100) * per;
     }
 
-    document.getElementById("zakat").innerText = percentage(maliyat - zimmadar, 2.5).toFixed(2)
+    document.getElementById("zakat").innerText = percentage(maliyat - zimmadar, 2.5).toFixed(2);
 }
