@@ -43,20 +43,24 @@ function calculate() {
     document.getElementById('zimmedariyan').innerText = Number(zimmadar).toFixed(2);
     document.getElementById('milkiyat').innerText = Number(maliyat).toFixed(2);
 
-    document.getElementById("total").innerText = Number(maliyat) - Number(zimmadar).toFixed(2);
+    document.getElementById("total").innerText = Number(maliyat).toFixed(2) - Number(zimmadar).toFixed(2);
 
     function percentage(num, per) {
         return (num / 100) * per;
     }
 
-    document.getElementById("zakat").innerText = percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2);
+    if (percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2) < 0) {
+        document.getElementById("zakat").innerText = 0
+    } else {
+        document.getElementById("zakat").innerText = percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2);
+    }
 }
 
 // ----------- calculator-input --------------
 
-$(document).ready(function() {
+$(document).ready(function () {
     // Add input event listener to all input fields with class "calculator-input"
-    $('.calculator-input').on('change', function() {
+    $('.calculator-input').on('change', function () {
         // Get the input value
         var inputVal = $(this).val();
         // Check if the input contains any non-mathematical characters
