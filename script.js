@@ -4,11 +4,11 @@ function language() {
     if (language == "u") {
         window.open('/zakat-calculator', '_self');
     } else if (language == "e") {
-        window.open('/e.htm', '_self')
+        window.open('/zakat-calculator/e.htm', '_self')
     } else if (language == "ru") {
-        window.open('/r-urdu.htm', '_self')
+        window.open('/zakat-calculator/r-urdu.htm', '_self')
     } else {
-        window.open('/hi.htm', '_self');
+        window.open('/zakat-calculator/hi.htm', '_self');
     }
 }
 
