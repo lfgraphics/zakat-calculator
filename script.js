@@ -60,12 +60,9 @@ function calculate() {
         document.getElementById("zakat").innerText = (final_milkiyat - final_milkiyat * 97.5 / 100).toFixed(2);
     }
 }
-// percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2)
 // ----------- calculator-input --------------
 
 $(document).ready(function () {
-    // window.open('https://wafaqulmasajid-github-io.translate.goog/zakat-calculator/?_x_tr_sl=en&_x_tr_tl=ur&_x_tr_hl=en&_x_tr_pto=wapp')
-
     // Add input event listener to all input fields with class "calculator-input"
     $('.calculator-input').on('change', function calculator() {
         // Get the input value
