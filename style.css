@@ -92,3 +92,19 @@ tr th {
 #result {
     display: none;
 }
+
+footer{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 0;
+    height: max-content;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: blue;
+}

@@ -3,8 +3,12 @@ function language() {
 
     if (language == "u") {
         window.open('/zakat-calculator', '_self');
+    } else if (language == "e") {
+        window.open('/e.htm', '_self')
+    } else if (language == "ru") {
+        window.open('/r-urdu.htm', '_self')
     } else {
-        window.open('r-urdu.htm', '_self');
+        window.open('/hi.htm', '_self');
     }
 }
 
@@ -40,29 +44,32 @@ function calculate() {
     ];
 
     document.getElementById("result").style.display = "block";
-    document.getElementById('zimmedariyan').innerText = Number(zimmadar).toFixed(2);
-    document.getElementById('milkiyat').innerText = Number(maliyat).toFixed(2);
 
-    document.getElementById("total").innerText = Number(maliyat).toFixed(2) - Number(zimmadar).toFixed(2);
+    let zimmedariyan = Number(zimmadar).toFixed(2);
+    let kul_maal = Number(maliyat).toFixed(2)
+    let final_milkiyat = kul_maal - zimmedariyan
 
-    function percentage(num, per) {
-        return (num / 100) * per;
-    }
+    document.getElementById('zimmedariyan').innerText = zimmedariyan;
+    document.getElementById('milkiyat').innerText = kul_maal;
 
-    if (percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2) < 0) {
+    document.getElementById("total").innerText = final_milkiyat.toFixed(2);
+
+    if ((final_milkiyat - final_milkiyat * 97.5 / 100).toFixed(2) < 0) {
         document.getElementById("zakat").innerText = 0
     } else {
-        document.getElementById("zakat").innerText = percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2);
+        document.getElementById("zakat").innerText = (final_milkiyat - final_milkiyat * 97.5 / 100).toFixed(2);
     }
 }
-
+// percentage(Number(maliyat) - Number(zimmadar), 2.5).toFixed(2)
 // ----------- calculator-input --------------
 
 $(document).ready(function () {
+    // window.open('https://wafaqulmasajid-github-io.translate.goog/zakat-calculator/?_x_tr_sl=en&_x_tr_tl=ur&_x_tr_hl=en&_x_tr_pto=wapp')
+
     // Add input event listener to all input fields with class "calculator-input"
-    $('.calculator-input').on('change', function () {
+    $('.calculator-input').on('change', function calculator() {
         // Get the input value
-        var inputVal = $(this).val();
+        let inputVal = $(this).val();
         // Check if the input contains any non-mathematical characters
         if (/[^\d()+\-*/.\s]/.test(inputVal)) {
             // Clear the input field if there are any non-mathematical characters
@@ -71,12 +78,19 @@ $(document).ready(function () {
         }
         // Evaluate the input as a mathematical expression
         try {
-            var result = eval(inputVal);
+            let result = eval(inputVal);
             // Set the input field value to the result of the calculation
             $(this).val(result);
         } catch (error) {
             // If there is an error in the calculation, clear the input field
             $(this).val('');
         }
+        if (document.getElementById("result").style.display == "block") {
+            return calculate()
+        }
     });
+    // $('.gold').on('change', function () {
+    //     let mainGold = Number(document.getElementById("01").value);
+    //     this.value = mainGold - mainGold * 20 / 100;
+    // })
 });

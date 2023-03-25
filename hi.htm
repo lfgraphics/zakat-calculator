@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HY9174LNC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4HY9174LNC');
+    </script>
+    <meta name="description" content="Free Zakat Calculator">
+    <meta name="keywords"
+        content="zakat, Zakat, Sakat, زکوٰۃ, زکات, zakat calculator,zakat calculater, Zakat Calculator, زکوٰۃ کیلکیولیٹر, زکات کیلکولیٹر, جاکات کیکولیٹر, jakat, jakaat, jakat calculator, jakat calculater, wafaqul masajid zakat calculator, wafaqul masajid, khadime millat, khadime millat zakat calculator, وفاق المساجد زکوٰۃ کیلکیولیٹر, خادم ملت زکوٰۃ کیلکیولیٹر, وفاق المساجد, ख़ादिम मिल्लत जकात कैल्क्यूलेटर, वाफकुल मसजिद ज़कात कैल्क्यूलेटर, वफाकुल मसजिद">
+    <meta name="author" content="Taha Kazmi, LF Graphics">
+    <!-- ---------------- needed -------------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- -------------------bootstrap link--------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- ---------------------google fonts--------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <!-- ---------------------- jQuery ------------------ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ------------------------local-------------- -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>ज़कात कैल्कुलेटर</title>
+    <!-- ----------------style for this------- -->
+    <style>
+        table,
+        thead,
+        th,
+
+        .table {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body style="font-family: 'arial';">
+    <!-- ------------ navebar ------------ -->
+    <nav class="navbar navbar-expand-lg text-center">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: Arial, Helvetica, sans-serif;" href="http://kmwf.in/"
+                target="_blank">ख़ादिमे मिल्लत वेलफेयर फाउन्डेशन</a>
+            <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+            <select name="languages" class="text-center my-3" id="lang" onchange="language()">
+                <option value="u" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
+                <option value="ru">Roman Urdu</option>
+                <option value="e">English</option>
+                <option value="h" selected>हिंदी</option>
+            </select>
+            <!-- </div> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- ------------ head --------------- -->
+    <div class="container">
+        <div class="head text-center my-3 mx-2">
+            <div class="primary text-center my-3">
+                <h1>ज़कात कि अदाएगी के लिये मददगार कैल्क्यूलेटर</h1>
+                <p class="text-center">ज़ेरे इंतेज़ाम: इदारा वफ़ाक़ुल मसाजिद <a href="http://kmwf.in/"
+                        target="_blank">ख़ादिमे मिल्लत वेलफ़ेयर फाउंडेशन</a></p>
+                <div class="text-center" id="logo">
+                    <a href="logo.png" target="_blank">
+                        <img src="logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="secondry text-center my-3">
+                <p>सबसे पहले जकात वजीब होने की कमरी तारीख तय कर लें, जकात वाजिब होने की कमरी इस्लामी
+                    तारीख...
+                    <br>
+                    अपकी
+                    ज़कात की मुक़र्राह तारिख़ आ जाए तो उस दिन अपने तमाम माल का हिसाब मार्केट रेट के मुताबिक कर लें
+                </p>
+            </div>
+        </div>
+
+        <!-- ----------------- form-type ------------------- -->
+
+        <h2 class="text-center">माली जिम्मेदारियां</h2>
+        <div class="dene-wala text-center align-items-center">
+            <div class="mb-3">
+                <label for="1" class="form-label text-lg-center">लिया हुआ कर्ज़</label>
+                <input type="text" class="calculator-input form-control" id="1">
+            </div>
+            <div class="mb-3">
+                <label for="2" class="form-label text-lg-center">बीवी कि गैर अदा शुदा महर</label>
+                <input type="text" class="calculator-input form-control" id="2">
+            </div>
+            <div class="mb-3">
+                <label for="3" class="form-label text-lg-center">बिजली का बाकी बिल</label>
+                <input type="text" class="calculator-input form-control" id="3">
+            </div>
+            <div class="mb-3 visually-hidden">
+                <label for="4" class="form-label text-lg-center">Gas ka wajibul ada bil</label>
+                <input type="text" class="calculator-input form-control" id="4" value="0">
+            </div>
+            <div class="mb-3">
+                <label for="5" class="form-label text-lg-center">पानी का बाकी बिल</label>
+                <input type="text" class="calculator-input form-control" id="5">
+            </div>
+            <div class="mb-3 visually-hidden">
+                <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
+                <input type="text" class="calculator-input form-control" id="6" value="0">
+            </div>
+            <div class="mb-3">
+                <label for="7" class="form-label text-lg-center">मकान का बाकी किराया</label>
+                <input type="text" class="calculator-input form-control" id="7">
+            </div>
+            <div class="mb-3">
+                <label for="8" class="form-label text-lg-center">दूकान का बाकी किराया</label>
+                <input type="text" class="calculator-input form-control" id="8">
+            </div>
+            <div class="mb-3">
+                <label for="9" class="form-label text-lg-center">गोदाम का बाकी किराया</label>
+                <input type="text" class="calculator-input form-control" id="9">
+            </div>
+            <div class="mb-3">
+                <label for="10" class="form-label text-lg-center">और सारे वाजिबुलअदा अख्राजात</label>
+                <input type="text" class="calculator-input form-control" id="10">
+            </div>
+            <div class="mb-3">
+                <label for="11" class="form-label text-lg-center">मुलाज़िमीन कि बाकी तनख्वाह</label>
+                <input type="text" class="calculator-input form-control" id="11">
+            </div>
+        </div>
+        <hr>
+        <!-- ---------- paisa bolta bhai paisa -------------- -->
+        <h2 class="text-center">क़बिले ज़कात असासों की मालियत</h2>
+        <div class="paisa text-center my-3">
+            <div class="mb-3">
+                <label for="01" class="form-label text-lg-center">सोना (चाहे किसी भी सूरत में हो)<br> <a
+                        href="https://www.goodreturns.in/gold-rates/" target="_blank">सोने कि आज की क़ीमत 🔗</a></label>
+                <input type="text" class="calculator-input form-control gold" id="01">
+            </div>
+            <div class="mb-3">
+                <label for="02" class="form-label text-lg-center">चांदी (चाहे किसी भी सूरत में हो)<br> <a
+                        href="https://www.goodreturns.in/silver-rates/" target="_blank">चांदी की आज की क़ीमत
+                        🔗</a></label>
+                <input type="text" class="calculator-input form-control silver" id="02">
+            </div>
+            <div class="mb-3">
+                <label for="03" class="form-label text-lg-center">नक़द कैश (चाहे किसी भी ज़रुरत के लिये हो)</label>
+                <input type="text" class="calculator-input form-control" id="03">
+            </div>
+            <div class="mb-3">
+                <label for="04" class="form-label text-lg-center">बैंक बैलेंस</label>
+                <input type="text" class="calculator-input form-control" id="04">
+            </div>
+            <div class="mb-3">
+                <label for="05" class="form-label text-lg-center">किसी को उधार या अमानत दी गई रकम</label>
+                <input type="text" class="calculator-input form-control" id="05">
+            </div>
+            <div class="mb-3">
+                <label for="06" class="form-label text-lg-center">सिक्यूरिटी में दी गई रकम</label>
+                <input type="text" class="calculator-input form-control" id="06">
+            </div>
+            <div class="mb-3">
+                <label for="07" class="form-label text-lg-center">इनश्यूरेंस पालिसी में असल जमा शुदा रक़म (ٰइनश्यूरेंस ना
+                    जाएज़ है)</label>
+                <input type="text" class="calculator-input form-control" id="07">
+            </div>
+            <div class="mb-3">
+                <label for="08" class="form-label text-lg-center">गैर मुल्की करेंसी (मौजूदा रेट के मुताबिक़)<br><a
+                        target="_blank"
+                        href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">करेंसी
+                        कनवर्टर 🔗</a></label>
+                <input type="text" class="calculator-input form-control" id="08">
+            </div>
+            <div class="mb-3 visually-hidden">
+                <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
+                <input type="text" class="calculator-input form-control" id="09" value="0">
+            </div>
+            <div class="mb-3 visually-hidden">
+                <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident Fund</strong></label>
+                <input type="text" class="calculator-input form-control" id="010" value="0">
+            </div>
+            <div class="mb-3">
+                <label for="011" class="form-label text-lg-center">स्टॉक (दूकान/ गोदाम में मौजूदा माल जिसकी क़ीमत अदा हो
+                    चुकी
+                    हो), कच्चा माल</label>
+                <input type="text" class="calculator-input form-control" id="011">
+            </div>
+            <div class="mb-3">
+                <label for="012" class="form-label text-lg-center">बेचने की नियत से खरीदी गई दूकान, मकान, गाड़ी, कच्चा
+                    माल
+                    (जिसकी क़ीमत अदा हो चुकी हो)</label>
+                <input type="text" class="calculator-input form-control" id="012">
+            </div>
+        </div>
+
+        <!-- -----------------------results------------ -->
+        <div class="result my-3" id="result">
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="zimmedariyan"></td>
+                        <td>कुल ज़िम्मेदारियाँ</td>
+                        <td id="milkiyat"></td>
+                        <td>कुल मलियत</td>
+                    </tr>
+                    <tr>
+                        <td id="total"></td>
+                        <td>कुल मिलकियत</td>
+                        <td id="zakat"></td>
+                        <td>ज़कात की रक़म</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center my-3">
+            <button class="btn btn-primary" id="calculate" onclick="calculate()">जोड़ें</button>
+        </div>
+        <!-- 
+        <div class="secondry text-center my-3 mx-2">
+            <p>جب آپ سب چیزوں کے سامنے رقم کا خانہ پر کرلیں تو نمبر دو کی ٹوٹل رقم کونمبرایک کی ٹوٹل رقم سے منہا ( مائنس )
+                کرلیں۔ باقی جو رقم بچے آپ نے صرف اس کی زکوٰۃ ڑھائی فیصد (2.5) یعنی چالیسواں حصہ ادا کرنی ہے۔ جیسے ایک لاکھ
+                روپے میں سے 2500 روپے۔
+            </p>
+        </div> -->
+        <div class="my-3">
+            <h3 class="text-center my-3">जकात अदा करने से पहले नीचे दी गई बातों को जानना ज़रूरी है</h3>
+            <a href="media/1.jpg"><img src="media/1.jpg" class="img-fluid"></a>
+            <a href="media/2.jpg"><img src="media/2.jpg" class="img-fluid"></a>
+            <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
+        </div>
+
+    </div>
+    <footer class="text-center my-0">
+        <p>Copyright 2023 &#169
+            <br>
+            Designed and Developed by:- <a href="https://www.kmf.in" target="_blank">Khadim-e-Millat Welfare
+                Foundation</a>
+        </p>
+    </footer>
+    <!-- ------------- end of body ----------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
