@@ -52,10 +52,10 @@
                 <option value="h">हिंदी</option>
             </select>
             <!-- </div> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-p="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
         </div>
     </nav>
 
@@ -89,11 +89,11 @@
         </div>
 
         <!-- ----------------- form-type ------------------- -->
-        <label for="name" id="lName" class="form-label d-block text-center">آپ کا نام</label>
+        <!-- <label for="name" id="lName" class="form-label d-block text-center">آپ کا نام</label> -->
+        <!-- <div class="mb-3 text-center">
+            <input type="text" class="border-0 border-bottom" id="name">
+        </div> -->
         <div class="toPrint" id="toPrint">
-            <div class="mb-3 text-center">
-                <input type="text" class="border-0 border-bottom" id="name">
-            </div>
             <h2 class="text-center">مالی ذمہ داریاں</h2>
             <div class="dene-wala text-center align-items-center">
                 <div class="mb-3">
@@ -237,16 +237,16 @@
             </div>
             <div class="col" id="print">
                 <div class="text-center my-3">
-                    <button class="btn btn-primary" id="save" onclick="save()">فوٹو کے تور پر محفوظ کریں</button>
+                    <button class="btn btn-primary" id="save" onclick="save()">کے تور پر محفوظ کریں PDF</button>
                 </div>
             </div>
         </div>
         <div class="row text-center">
-            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر فوٹو شیئر کریں"
-                target="_blank" id="share" aria-label="Chat on WhatsApp" href="https://wa.me/919169823114">
-                <button class="btn btn-success">فوٹو شیئر کریں</button>
+            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر PDF شیئر کریں"
+                target="_blank" id="share" aria-label="Chat on WhatsApp" onclick="share()" href="https://wa.me/919169823114">
+                <button class="btn btn-success">مفتی صاحب کو دکھائیں PDF</button>
             </a>
-            <button class="btn btn-primary" i d="sImg" onclick="shareImage()">Share image</button>
+            <!-- <button class="btn btn-primary" id="sImg" onclick="shareImage()">Share image</button> -->
         </div>
 
         <div class="secondry text-center my-3 mx-2">
@@ -265,11 +265,11 @@
             <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
         </div>
     </div>
-    <footer class="text-center my-0">
+    <footer class="text-center mt-3">
         <p>Copyright 2023 &#169
             <br>
             Designed and Developed by:- <a href="https://www.kmf.in" target="_blank">Khadim-e-Millat Welfare
-                Foundation</a>
+                Foundation</a> all rights reserved
         </p>
     </footer>
     <!-- ------------- end of body ----------- -->

@@ -63,67 +63,85 @@ function calculate() {
 }
 
 // ---------------------- save/ print the info. --------------
-/*
+
 function save() {
-    if (document.getElementById('name').value !== '') {
-        // Clone the toPrint div using outerHTML
-        var printContents = document.getElementById('toPrint').cloneNode(true);
+    // Clone the toPrint div using outerHTML
+    let printContents = document.getElementById('toPrint').cloneNode(true);
 
-        // Add a CSS rule to hide the input fields during printing
-        var css = '@media print { input { display: none; } }';
-        var head = document.head || document.getElementsByTagName('head')[0];
-        var style = document.createElement('style');
-        style.type = 'text/css';
-        style.appendChild(document.createTextNode(css));
-        head.appendChild(style);
+    // Add a CSS rule to hide the input fields during printing
+    let css = '@media print { input { display: none; } }';
+    let head = document.head || document.getElementsByTagName('head')[0];
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.appendChild(document.createTextNode(css));
+    head.appendChild(style);
 
-        // Print the cloned div
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = "";
-        document.body.appendChild(printContents);
-        window.print();
-        document.body.innerHTML = originalContents;
+    // Print the cloned div
+    let originalContents = document.body.innerHTML;
+    document.body.innerHTML = "";
+    document.body.appendChild(printContents);
+    window.print();
+    document.body.innerHTML = originalContents;
 
-        // Remove the CSS rule
-        head.removeChild(style);
+    // Remove the CSS rule
+    head.removeChild(style);
 
-        // Save the printed PDF in localStorage
-        var pdfData = btoa(unescape(encodeURIComponent(originalContents)));
-        localStorage.setItem('printedPDF', pdfData);
+    // Save the printed PDF in localStorage
+    let pdfData = btoa(unescape(encodeURIComponent(originalContents)));
+    localStorage.setItem('printedPDF', pdfData);
 
-        // Show or hide the share button depending on whether the PDF is available in localStorage
-        var shareButton = document.getElementById('share');
-        if (localStorage.getItem('printedPDF') !== null) {
-            shareButton.style.display = 'block';
-        } else {
-            shareButton.style.display = 'none';
-        }
-    } else alert('Please enter your name before saving\n we do not read any data');
-    let element = document.getElementById("lName");
-    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    document.getElementById('name').focus
+    // Show or hide the share button depending on whether the PDF is available in localStorage
+    let shareButton = document.getElementById('share');
+    if (localStorage.getItem('printedPDF') !== null) {
+        shareButton.style.display = 'block';
+    } else {
+        shareButton.style.display = 'none';
+    }
+
 }
-*/
+
+
+
+/*
 // --------- save as png ---------
+function saveDivAsPNG(divId, imageName) {
+    // Select the div that you want to capture
+    const element = document.querySelector('#toPrint');
+
+    // Use html2canvas to capture the contents of the div
+    html2canvas(element).then(canvas => {
+        // Convert the canvas content to a data URL
+        const dataUrl = canvas.toDataURL('image/png');
+
+        // Save the data URL to local storage
+        localStorage.setItem('screenshot', dataUrl);
+
+        // Create a link element that downloads the screenshot
+        const link = document.createElement('a');
+        link.download = 'screenshot.png';
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+    });
+}
 
 function saveDivAsPNG(divId, imageName) {
     html2canvas(document.getElementById(divId)).then(function (canvas) {
-        var imgData = canvas.toDataURL('image/png');
+        let imgData = canvas.toDataURL('image/png');
         try {
             localStorage.setItem(imageName, imgData);
             console.log('Image saved to localStorage.');
         } catch (e) {
             console.error('Error saving image to localStorage: ' + e);
         }
-        var downloadLink = document.createElement('a');
+        let downloadLink = document.createElement('a');
         downloadLink.setAttribute('download', imageName + '.png');
         downloadLink.setAttribute('href', imgData);
         downloadLink.click();
     });
 }
 
-
-
+/*
 function save() {
     saveDivAsPNG("toPrint", "my_image");
 
@@ -184,17 +202,27 @@ function shareImage() {
         console.warn('Share API not supported');
     }
 }
-
+*/
 
 // ----------- jQuery -----------
 
 $(document).ready(function () {
+    /*
     // check if image is saved in localStorage
     if (localStorage.getItem("my_image")) {
         document.getElementById('share').style.display = 'block';
     } else {
         document.getElementById('share').style.display = 'none';
     }
+    */
+    // ------------ check if the pdf is saved -----------------
+    let shareButton = document.getElementById('share');
+    if (localStorage.getItem('printedPDF') !== null) {
+        shareButton.style.display = 'block';
+    } else {
+        shareButton.style.display = 'none';
+    }
+
     // ----------- calculator-input --------------
     // Add input event listener to all input fields with class "calculator-input"
     $('.calculator-input').on('change', function calculator() {
@@ -219,6 +247,8 @@ $(document).ready(function () {
             return calculate()
         }
     });
+
+    // -------- gold /cent deduction ------
     // $('.gold').on('change', function () {
     //     let mainGold = Number(document.getElementById("01").value);
     //     this.value = mainGold - mainGold * 20 / 100;

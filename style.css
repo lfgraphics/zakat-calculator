@@ -12,7 +12,7 @@ body {
     margin: 10px;
 }
 
-.flex label{
+.flex label {
     align-self: center;
 }
 
@@ -51,6 +51,7 @@ tr td {
     margin: 0.25vw;
     text-align: center;
 }
+
 input[type=text] {
     /* width: 60px; */
     font-family: "arial";
@@ -93,39 +94,27 @@ tr th {
     display: none;
 }
 
-#print, #share{
+#print,
+#share {
     display: none;
 }
-input {
- box-sizing: border-box;
-  }
-  
-input[type=text], 
-textarea {
-  height: auto !important;
-  max-height: none !important;
-  min-height: none !important;
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-  padding: 5px 10px !important;
-  border: 1px solid #ccc !important;
-  border-radius: 4px !important;
-  box-sizing: border-box !important;
+
+#result table {
+    display: flex;
+    flex-direction: column;
 }
 
+#zimmedariyan, #total{
+    width: max-content;
+}
 
-footer{
+footer {
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    bottom: 0;
-    height: max-content;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: blue;
 }
