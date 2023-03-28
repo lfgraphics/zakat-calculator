@@ -93,6 +93,27 @@ tr th {
     display: none;
 }
 
+#print, #share{
+    display: none;
+}
+input {
+ box-sizing: border-box;
+  }
+  
+input[type=text], 
+textarea {
+  height: auto !important;
+  max-height: none !important;
+  min-height: none !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  padding: 5px 10px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+}
+
+
 footer{
     background-color: black;
     color: white;

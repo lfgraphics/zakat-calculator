@@ -29,6 +29,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <!-- ---------------------- jQuery ------------------ -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- --------------------- HTML 2 Canvas ------------------ -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <!-- ------------------------local-------------- -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -87,141 +89,164 @@
         </div>
 
         <!-- ----------------- form-type ------------------- -->
+        <label for="name" id="lName" class="form-label d-block text-center">آپ کا نام</label>
+        <div class="toPrint" id="toPrint">
+            <div class="mb-3 text-center">
+                <input type="text" class="border-0 border-bottom" id="name">
+            </div>
+            <h2 class="text-center">مالی ذمہ داریاں</h2>
+            <div class="dene-wala text-center align-items-center">
+                <div class="mb-3">
+                    <label for="1" class="form-label text-lg-center">لیا ہوا قرضہ</label>
+                    <input type="text" class="calculator-input form-control" id="1">
+                </div>
+                <div class="mb-3">
+                    <label for="2" class="form-label text-lg-center">بیوی کا غیر ادا شدہ مہر</label>
+                    <input type="text" class="calculator-input form-control" id="2">
+                </div>
+                <div class="mb-3">
+                    <label for="3" class="form-label text-lg-center">بجلی کا واجب الادا بل</label>
+                    <input type="text" class="calculator-input form-control" id="3">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="4" class="form-label text-lg-center">گیس کا واجب الادا بل</label>
+                    <input type="text" class="calculator-input form-control" id="4" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="5" class="form-label text-lg-center">پانی کا واجب الادا بل</label>
+                    <input type="text" class="calculator-input form-control" id="5">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="6" class="form-label text-lg-center">ٹیلی فون کا واجب الادا بل</label>
+                    <input type="text" class="calculator-input form-control" id="6" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="7" class="form-label text-lg-center">مکان کا واجب الادا کرایہ</label>
+                    <input type="text" class="calculator-input form-control" id="7">
+                </div>
+                <div class="mb-3">
+                    <label for="8" class="form-label text-lg-center">دوکان کا واجب الادا کرایہ</label>
+                    <input type="text" class="calculator-input form-control" id="8">
+                </div>
+                <div class="mb-3">
+                    <label for="9" class="form-label text-lg-center">گودام کا واجب الادا کرایہ</label>
+                    <input type="text" class="calculator-input form-control" id="9">
+                </div>
+                <div class="mb-3">
+                    <label for="10" class="form-label text-lg-center">دیگر واجب الادا اخراجات</label>
+                    <input type="text" class="calculator-input form-control" id="10">
+                </div>
+                <div class="mb-3">
+                    <label for="11" class="form-label text-lg-center">ملازمین کی واجب الادا تنخواہیں</label>
+                    <input type="text" class="calculator-input form-control" id="11">
+                </div>
+            </div>
+            <hr>
+            <!-- ---------- paisa bolta bhai paisa -------------- -->
+            <h2 class="text-center">قابل زکوٰۃ اثاثوں کی مالیت</h2>
+            <div class="paisa text-center my-3">
+                <div class="mb-3">
+                    <label for="01" class="form-label text-lg-center">سونا (چاہے کسی بھی صورت میں ہو)<br> <a
+                            href="https://www.goodreturns.in/gold-rates/" target="_blank">سونے کی موجودہ
+                            قیمت🔗</a></label>
+                    <input type="text" class="calculator-input form-control gold" id="01">
+                </div>
+                <div class="mb-3">
+                    <label for="02" class="form-label text-lg-center">چاندی (چاہے کسی بھی صورت میں ہو)<br> <a
+                            href="https://www.goodreturns.in/silver-rates/" target="_blank"> چاندی کی موجودہ
+                            قیمت🔗</a></label>
+                    <input type="text" class="calculator-input form-control silver" id="02">
+                </div>
+                <div class="mb-3">
+                    <label for="03" class="form-label text-lg-center">نقد کیش (کسی بھی مقصد کے لیے ہو)</label>
+                    <input type="text" class="calculator-input form-control" id="03">
+                </div>
+                <div class="mb-3">
+                    <label for="04" class="form-label text-lg-center">بینک بیلنس</label>
+                    <input type="text" class="calculator-input form-control" id="04">
+                </div>
+                <div class="mb-3">
+                    <label for="05" class="form-label text-lg-center">کسی کو ادھار یا امانت دی گئی رقم</label>
+                    <input type="text" class="calculator-input form-control" id="05">
+                </div>
+                <div class="mb-3">
+                    <label for="06" class="form-label text-lg-center">سیکورٹی میں دی گئی رقم</label>
+                    <input type="text" class="calculator-input form-control" id="06">
+                </div>
+                <div class="mb-3">
+                    <label for="07" class="form-label text-lg-center">انشورنس پالیسی میں اصل جمع شدہ رقم(انشیورنس نا
+                        جائز
+                        ہے)</label>
+                    <input type="text" class="calculator-input form-control" id="07">
+                </div>
+                <div class="mb-3">
+                    <label for="08" class="form-label text-lg-center">غیر ملکی کرنسی (موجودہ ریٹ کے مطابق) <br><a
+                            target="_blank"
+                            href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">Currency
+                            Converter 🔗</a></label>
+                    <input type="text" class="calculator-input form-control" id="08">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="09" class="form-label text-lg-center">بانڈز، مختلف سرٹیفکٹ</label>
+                    <input type="text" class="calculator-input form-control" id="09" value="0">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="010" class="form-label text-lg-center">وصول شدہ پروڈنٹ فنڈ</label>
+                    <input type="text" class="calculator-input form-control" id="010" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="011" class="form-label text-lg-center">دوکان/ گودام میں موجودہ مال، تیّار مال کا
+                        اسٹاک</label>
+                    <input type="text" class="calculator-input form-control" id="011">
+                </div>
+                <div class="mb-3">
+                    <label for="012" class="form-label text-lg-center">بیچنے کی نیت سے خریدی گئی دکان، پلاٹ، گاڑی، خام
+                        مال
+                        (جس کی قیمت
+                        ادا
+                        کر دی گئی ہو)</label>
+                    <input type="text" class="calculator-input form-control" id="012">
+                </div>
+            </div>
 
-        <h2 class="text-center">مالی ذمہ داریاں</h2>
-        <div class="dene-wala text-center align-items-center">
-            <div class="mb-3">
-                <label for="1" class="form-label text-lg-center">لیا ہوا قرضہ</label>
-                <input type="text" class="calculator-input form-control" id="1">
-            </div>
-            <div class="mb-3">
-                <label for="2" class="form-label text-lg-center">بیوی کا غیر ادا شدہ مہر</label>
-                <input type="text" class="calculator-input form-control" id="2">
-            </div>
-            <div class="mb-3">
-                <label for="3" class="form-label text-lg-center">بجلی کا واجب الادا بل</label>
-                <input type="text" class="calculator-input form-control" id="3">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="4" class="form-label text-lg-center">گیس کا واجب الادا بل</label>
-                <input type="text" class="calculator-input form-control" id="4" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="5" class="form-label text-lg-center">پانی کا واجب الادا بل</label>
-                <input type="text" class="calculator-input form-control" id="5">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="6" class="form-label text-lg-center">ٹیلی فون کا واجب الادا بل</label>
-                <input type="text" class="calculator-input form-control" id="6" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="7" class="form-label text-lg-center">مکان کا واجب الادا کرایہ</label>
-                <input type="text" class="calculator-input form-control" id="7">
-            </div>
-            <div class="mb-3">
-                <label for="8" class="form-label text-lg-center">دوکان کا واجب الادا کرایہ</label>
-                <input type="text" class="calculator-input form-control" id="8">
-            </div>
-            <div class="mb-3">
-                <label for="9" class="form-label text-lg-center">گودام کا واجب الادا کرایہ</label>
-                <input type="text" class="calculator-input form-control" id="9">
-            </div>
-            <div class="mb-3">
-                <label for="10" class="form-label text-lg-center">دیگر واجب الادا اخراجات</label>
-                <input type="text" class="calculator-input form-control" id="10">
-            </div>
-            <div class="mb-3">
-                <label for="11" class="form-label text-lg-center">ملازمین کی واجب الادا تنخواہیں</label>
-                <input type="text" class="calculator-input form-control" id="11">
+            <!-- -----------------------results------------ -->
+            <div class="result my-3" id="result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="zimmedariyan"></td>
+                            <td>کل ذمہ داریاں</td>
+                            <td id="milkiyat"></td>
+                            <td>کل مالیت</td>
+                        </tr>
+                        <tr>
+                            <td id="total"></td>
+                            <td>کل ملکیت</td>
+                            <td id="zakat"></td>
+                            <td>زکوٰۃ کی واجب الادا رقم</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <hr>
-        <!-- ---------- paisa bolta bhai paisa -------------- -->
-        <h2 class="text-center">قابل زکوٰۃ اثاثوں کی مالیت</h2>
-        <div class="paisa text-center my-3">
-            <div class="mb-3">
-                <label for="01" class="form-label text-lg-center">سونا (چاہے کسی بھی صورت میں ہو)<br> <a
-                        href="https://www.goodreturns.in/gold-rates/" target="_blank">سونے کی موجودہ
-                        قیمت🔗</a></label>
-                <input type="text" class="calculator-input form-control gold" id="01">
+        <div class="row">
+            <div class="col">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="calculate" onclick="calculate()">حساب کریں</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="02" class="form-label text-lg-center">چاندی (چاہے کسی بھی صورت میں ہو)<br> <a
-                        href="https://www.goodreturns.in/silver-rates/" target="_blank"> چاندی کی موجودہ
-                        قیمت🔗</a></label>
-                <input type="text" class="calculator-input form-control silver" id="02">
-            </div>
-            <div class="mb-3">
-                <label for="03" class="form-label text-lg-center">نقد کیش (کسی بھی مقصد کے لیے ہو)</label>
-                <input type="text" class="calculator-input form-control" id="03">
-            </div>
-            <div class="mb-3">
-                <label for="04" class="form-label text-lg-center">بینک بیلنس</label>
-                <input type="text" class="calculator-input form-control" id="04">
-            </div>
-            <div class="mb-3">
-                <label for="05" class="form-label text-lg-center">کسی کو ادھار یا امانت دی گئی رقم</label>
-                <input type="text" class="calculator-input form-control" id="05">
-            </div>
-            <div class="mb-3">
-                <label for="06" class="form-label text-lg-center">سیکورٹی میں دی گئی رقم</label>
-                <input type="text" class="calculator-input form-control" id="06">
-            </div>
-            <div class="mb-3">
-                <label for="07" class="form-label text-lg-center">انشورنس پالیسی میں اصل جمع شدہ رقم(انشیورنس نا جائز
-                    ہے)</label>
-                <input type="text" class="calculator-input form-control" id="07">
-            </div>
-            <div class="mb-3">
-                <label for="08" class="form-label text-lg-center">غیر ملکی کرنسی (موجودہ ریٹ کے مطابق) <br><a
-                        target="_blank"
-                        href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">Currency
-                        Converter 🔗</a></label>
-                <input type="text" class="calculator-input form-control" id="08">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="09" class="form-label text-lg-center">بانڈز، مختلف سرٹیفکٹ</label>
-                <input type="text" class="calculator-input form-control" id="09" value="0">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="010" class="form-label text-lg-center">وصول شدہ پروڈنٹ فنڈ</label>
-                <input type="text" class="calculator-input form-control" id="010" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="011" class="form-label text-lg-center">دوکان/ گودام میں موجودہ مال، تیّار مال کا
-                    اسٹاک</label>
-                <input type="text" class="calculator-input form-control" id="011">
-            </div>
-            <div class="mb-3">
-                <label for="012" class="form-label text-lg-center">بیچنے کی نیت سے خریدی گئی دکان، پلاٹ، گاڑی، خام مال
-                    (جس کی قیمت
-                    ادا
-                    کر دی گئی ہو)</label>
-                <input type="text" class="calculator-input form-control" id="012">
+            <div class="col" id="print">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="save" onclick="save()">فوٹو کے تور پر محفوظ کریں</button>
+                </div>
             </div>
         </div>
-
-        <!-- -----------------------results------------ -->
-        <div class="result my-3" id="result">
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="zimmedariyan"></td>
-                        <td>کل ذمہ داریاں</td>
-                        <td id="milkiyat"></td>
-                        <td>کل مالیت</td>
-                    </tr>
-                    <tr>
-                        <td id="total"></td>
-                        <td>کل ملکیت</td>
-                        <td id="zakat"></td>
-                        <td>زکوٰۃ کی واجب الادا رقم</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="text-center my-3">
-            <button class="btn btn-primary" id="calculate" onclick="calculate()">حساب کریں</button>
+        <div class="row text-center">
+            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر فوٹو شیئر کریں"
+                target="_blank" id="share" aria-label="Chat on WhatsApp" href="https://wa.me/919169823114">
+                <button class="btn btn-success">فوٹو شیئر کریں</button>
+            </a>
+            <button class="btn btn-primary" i d="sImg" onclick="shareImage()">Share image</button>
         </div>
 
         <div class="secondry text-center my-3 mx-2">
