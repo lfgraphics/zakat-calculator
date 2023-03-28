@@ -104,7 +104,8 @@ tr th {
     flex-direction: column;
 }
 
-#zimmedariyan, #total{
+#zimmedariyan,
+#total {
     width: max-content;
 }
 
@@ -117,4 +118,21 @@ footer {
 footer a {
     text-decoration: none;
     color: blue;
+}
+
+/* ------------printing issue on phone----------- */
+@media print and (max-width: 480px) {
+    body * {
+        display: none !important;
+    }
+
+    #toPrint,
+    #toPrint * {
+        display: block !important;
+    }
+
+    #toPrint {
+        position: static !important;
+        overflow: visible !important;
+    }
 }
