@@ -14,34 +14,16 @@ function language() {
 
 
 function calculate() {
-    let maliyat = [
-        Number(document.getElementById("01").value) +
-        Number(document.getElementById("02").value) +
-        Number(document.getElementById("03").value) +
-        Number(document.getElementById("04").value) +
-        Number(document.getElementById("05").value) +
-        Number(document.getElementById("06").value) +
-        Number(document.getElementById("07").value) +
-        Number(document.getElementById("08").value) +
-        Number(document.getElementById("09").value) +
-        Number(document.getElementById("010").value) +
-        Number(document.getElementById("011").value) +
-        Number(document.getElementById("012").value)
-    ];
-
-    let zimmadar = [
-        Number(document.getElementById("1").value) +
-        Number(document.getElementById("2").value) +
-        Number(document.getElementById("3").value) +
-        Number(document.getElementById("4").value) +
-        Number(document.getElementById("5").value) +
-        Number(document.getElementById("6").value) +
-        Number(document.getElementById("7").value) +
-        Number(document.getElementById("8").value) +
-        Number(document.getElementById("9").value) +
-        Number(document.getElementById("10").value) +
-        Number(document.getElementById("11").value)
-    ];
+    let maliyat = 0;
+    for (let i = 1; i <= 12; i++) {
+      let id = "0" + i;
+      maliyat += Number(document.getElementById(id.toString()).value);
+    }
+    
+    let zimmadar = 0;
+    for (let i = 1; i <= 11; i++) {
+        zimmadar += Number(document.getElementById(i.toString()).value);
+    }
 
     document.getElementById("result").style.display = "block";
 
@@ -65,32 +47,34 @@ function calculate() {
 // ---------------------- save/ print the info. --------------
 
 function save() {
-      // Open a new window
-  var printWindow = window.open('', 'Print Window');
-  // Set the body content of the window as the div 'toPrint'
-  printWindow.document.body.innerHTML = document.getElementById('toPrint').innerHTML;
-  // Set the head section of the new window to the head section of the main page
-  printWindow.document.head.innerHTML = document.head.innerHTML;
-  // Change the href of the link tag with rel="stylesheet"
-  var link = printWindow.document.querySelector('link[href="style.css"]');
-  link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
-   // Set the values of the input fields in the new window
-   for (var i = 0; i < inputFields.length; i++) {
-    var inputField = inputFields[i];
-    if (inputField.type === 'text') {
-      var inputFieldId = inputField.getAttribute('id');
-      var inputFieldValue = inputField.value;
-      var printWindowInputField = printWindow.document.getElementById(inputFieldId);
-      if (printWindowInputField) {
-        printWindowInputField.value = inputFieldValue;
-      }
+    // Open a new window
+    let printWindow = window.open('', 'Print Window');
+    // Set the body content of the window as the div 'toPrint'
+    printWindow.document.body.innerHTML = document.getElementById('toPrint').innerHTML;
+    // Set the head section of the new window to the head section of the main page
+    printWindow.document.head.innerHTML = document.head.innerHTML;
+    // Change the href of the link tag with rel="stylesheet"
+    let link = printWindow.document.querySelector('link[href="style.css"]');
+    link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
+    // Set the values of the input fields in the new window
+    let inputFields = document.getElementsByTagName('input');
+
+    for (let i = 0; i < inputFields.length; i++) {
+        let inputField = inputFields[i];
+        if (inputField.type === 'text') {
+            let inputFieldId = inputField.getAttribute('id');
+            let inputFieldValue = inputField.value;
+            let printWindowInputField = printWindow.document.getElementById(inputFieldId);
+            if (printWindowInputField) {
+                printWindowInputField.value = inputFieldValue;
+            }
+        }
     }
-  }
-  // Delay for 1 second before printing
-  setTimeout(function() {
-    // Print the window
-    printWindow.print();
-  }, 1000);
+    // Delay for 1 second before printing
+    setTimeout(function () {
+        // Print the window
+        printWindow.print();
+    }, 1000);
 }
 
 
