@@ -65,39 +65,20 @@ function calculate() {
 // ---------------------- save/ print the info. --------------
 
 function save() {
-    // Clone the toPrint div using outerHTML
-    let printContents = document.getElementById('toPrint').cloneNode(true);
-
-    // Add a CSS rule to hide the input fields during printing
-    let css = '@media print { input { display: none; } }';
-    let head = document.head || document.getElementsByTagName('head')[0];
-    let style = document.createElement('style');
-    style.type = 'text/css';
-    style.appendChild(document.createTextNode(css));
-    head.appendChild(style);
-
-    // Print the cloned div
-    let originalContents = document.body.innerHTML;
-    document.body.innerHTML = "";
-    document.body.appendChild(printContents);
-    window.print();
-    document.body.innerHTML = originalContents;
-
-    // Remove the CSS rule
-    head.removeChild(style);
-
-    // Save the printed PDF in localStorage
-    let pdfData = btoa(unescape(encodeURIComponent(originalContents)));
-    localStorage.setItem('printedPDF', pdfData);
-
-    // Show or hide the share button depending on whether the PDF is available in localStorage
-    let shareButton = document.getElementById('share');
-    if (localStorage.getItem('printedPDF') !== null) {
-        shareButton.style.display = 'block';
-    } else {
-        shareButton.style.display = 'none';
-    }
-
+      // Open a new window
+  var printWindow = window.open('', 'Print Window');
+  // Set the body content of the window as the div 'toPrint'
+  printWindow.document.body.innerHTML = document.getElementById('toPrint').innerHTML;
+  // Set the head section of the new window to the head section of the main page
+  printWindow.document.head.innerHTML = document.head.innerHTML;
+  // Change the href of the link tag with rel="stylesheet"
+  var link = printWindow.document.querySelector('link[href="style.css"]');
+  link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
+  // Delay for 1 second before printing
+  setTimeout(function() {
+    // Print the window
+    printWindow.print();
+  }, 1000);
 }
 
 
