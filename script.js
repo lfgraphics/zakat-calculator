@@ -103,6 +103,13 @@ function save() {
     if (attemptingToPrint) {
         localStorage.setItem('pdfPrintedAttempted', true);
     }
+
+    
+    // check if the PDF was printed or attempted to be printed
+    if (localStorage.getItem('pdfPrintedAttempted')) {
+        document.getElementById('whatsapp').style.display = "block";
+    } else { document.getElementById('whatsapp').style.display = "none"; }
+
 }
 
 // ------------------ jhol khtm ------------
