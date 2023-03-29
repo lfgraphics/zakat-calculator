@@ -74,6 +74,18 @@ function save() {
   // Change the href of the link tag with rel="stylesheet"
   var link = printWindow.document.querySelector('link[href="style.css"]');
   link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
+   // Set the values of the input fields in the new window
+   for (var i = 0; i < inputFields.length; i++) {
+    var inputField = inputFields[i];
+    if (inputField.type === 'text') {
+      var inputFieldId = inputField.getAttribute('id');
+      var inputFieldValue = inputField.value;
+      var printWindowInputField = printWindow.document.getElementById(inputFieldId);
+      if (printWindowInputField) {
+        printWindowInputField.value = inputFieldValue;
+      }
+    }
+  }
   // Delay for 1 second before printing
   setTimeout(function() {
     // Print the window
