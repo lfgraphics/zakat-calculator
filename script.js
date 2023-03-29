@@ -14,34 +14,16 @@ function language() {
 
 
 function calculate() {
-    let maliyat = [
-        Number(document.getElementById("01").value) +
-        Number(document.getElementById("02").value) +
-        Number(document.getElementById("03").value) +
-        Number(document.getElementById("04").value) +
-        Number(document.getElementById("05").value) +
-        Number(document.getElementById("06").value) +
-        Number(document.getElementById("07").value) +
-        Number(document.getElementById("08").value) +
-        Number(document.getElementById("09").value) +
-        Number(document.getElementById("010").value) +
-        Number(document.getElementById("011").value) +
-        Number(document.getElementById("012").value)
-    ];
+    let maliyat = 0;
+    for (let i = 1; i <= 12; i++) {
+        let id = "0" + i;
+        maliyat += Number(document.getElementById(id.toString()).value);
+    }
 
-    let zimmadar = [
-        Number(document.getElementById("1").value) +
-        Number(document.getElementById("2").value) +
-        Number(document.getElementById("3").value) +
-        Number(document.getElementById("4").value) +
-        Number(document.getElementById("5").value) +
-        Number(document.getElementById("6").value) +
-        Number(document.getElementById("7").value) +
-        Number(document.getElementById("8").value) +
-        Number(document.getElementById("9").value) +
-        Number(document.getElementById("10").value) +
-        Number(document.getElementById("11").value)
-    ];
+    let zimmadar = 0;
+    for (let i = 1; i <= 11; i++) {
+        zimmadar += Number(document.getElementById(i.toString()).value);
+    }
 
     document.getElementById("result").style.display = "block";
 
@@ -59,10 +41,90 @@ function calculate() {
     } else {
         document.getElementById("zakat").innerText = (final_milkiyat - final_milkiyat * 97.5 / 100).toFixed(2);
     }
+    document.getElementById('print').style.display = 'block'
 }
-// ----------- calculator-input --------------
+
+// ---------------------- save/ print the info. --------------
+
+function save() {
+    // Open a new window
+    var printWindow = window.open('', 'Print Window');
+    // Set the body content of the window as the div 'toPrint'
+    printWindow.document.body.innerHTML = document.getElementById('toPrint').innerHTML;
+    // Set the head section of the new window to the head section of the main page
+    printWindow.document.head.innerHTML = document.head.innerHTML;
+    // Change the href of the link tag with rel="stylesheet"
+    let link = printWindow.document.querySelector('link[href="style.css"]');
+    link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
+    // Set the values of the input fields in the new window
+    let inputFields = document.getElementsByTagName('input');
+
+    for (let i = 0; i < inputFields.length; i++) {
+        let inputField = inputFields[i];
+        if (inputField.type === 'text') {
+            let inputFieldId = inputField.getAttribute('id');
+            let inputFieldValue = inputField.value;
+            let printWindowInputField = printWindow.document.getElementById(inputFieldId);
+            if (printWindowInputField) {
+                printWindowInputField.value = inputFieldValue;
+            }
+        }
+    }
+    // Delay for 1 second before printing
+    setTimeout(function () {
+        printWindow.print()
+        // set flag in localStorage when printing is finished
+        if (attemptingToPrint) {
+            localStorage.setItem('pdfPrintedAttempted', true);
+        }
+    }, 1000);
+
+    // set flag to indicate that the user is attempting to print
+    let attemptingToPrint = true;
+
+    // open print window and print the PDF
+
+    // check if the PDF is printed
+    if (window.matchMedia) {
+        let mediaQueryList = window.matchMedia('print');
+        mediaQueryList.addListener(function (mql) {
+            if (!mql.matches) {
+                // clear the flag if printing is finished
+                attemptingToPrint = false;
+                // set flag in localStorage when printing is finished
+                localStorage.setItem('pdfPrinted', true);
+                // update whatsapp button
+                document.getElementById("whatsapp").style.display = "block";
+            }
+        });
+    }
+
+    // check if the user attempted to print the PDF (even if the printing was not successful)
+    if (attemptingToPrint) {
+        localStorage.setItem('pdfPrintedAttempted', true);
+    }
+
+    
+    // check if the PDF was printed or attempted to be printed
+    if (localStorage.getItem('pdfPrintedAttempted')) {
+        document.getElementById('whatsapp').style.display = "block";
+    } else { document.getElementById('whatsapp').style.display = "none"; }
+
+}
+
+// ------------------ jhol khtm ------------
+
+
+// ----------- jQuery -----------
 
 $(document).ready(function () {
+
+    // check if the PDF was printed or attempted to be printed
+    if (localStorage.getItem('pdfPrintedAttempted')) {
+        document.getElementById('whatsapp').style.display = "block";
+    } else { document.getElementById('whatsapp').style.display = "none"; }
+
+    // ----------- calculator-input --------------
     // Add input event listener to all input fields with class "calculator-input"
     $('.calculator-input').on('change', function calculator() {
         // Get the input value
@@ -86,6 +148,8 @@ $(document).ready(function () {
             return calculate()
         }
     });
+
+    // -------- gold /cent deduction ------
     // $('.gold').on('change', function () {
     //     let mainGold = Number(document.getElementById("01").value);
     //     this.value = mainGold - mainGold * 20 / 100;

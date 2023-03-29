@@ -58,10 +58,10 @@
                 <option value="h">हिंदी</option>
             </select>
             <!-- </div> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
         </div>
     </nav>
 
@@ -89,141 +89,162 @@
         </div>
 
         <!-- ----------------- form-type ------------------- -->
+        <div class="toPrint" id="toPrint">
+            <h2 class="text-center">Deductable assets</h2>
+            <div class="dene-wala text-center align-items-center">
+                <div class="mb-3">
+                    <label for="1" class="form-label text-lg-center">Debt/ EMI taken</label>
+                    <input type="text" class="calculator-input form-control" id="1">
+                </div>
+                <div class="mb-3">
+                    <label for="2" class="form-label text-lg-center">Wife's unpaid dowry</label>
+                    <input type="text" class="calculator-input form-control" id="2">
+                </div>
+                <div class="mb-3">
+                    <label for="3" class="form-label text-lg-center">Unpaid Electricity Bill</label>
+                    <input type="text" class="calculator-input form-control" id="3">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="4" class="form-label text-lg-center">unpaid Gas bill</label>
+                    <input type="text" class="calculator-input form-control" id="4" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="5" class="form-label text-lg-center">unpaid Water Tax/bill</label>
+                    <input type="text" class="calculator-input form-control" id="5">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="6" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="7" class="form-label text-lg-center">unpaid House Rent</label>
+                    <input type="text" class="calculator-input form-control" id="7">
+                </div>
+                <div class="mb-3">
+                    <label for="8" class="form-label text-lg-center">unpaid Shop Rent</label>
+                    <input type="text" class="calculator-input form-control" id="8">
+                </div>
+                <div class="mb-3">
+                    <label for="9" class="form-label text-lg-center">unpaid Warehouse Rent</label>
+                    <input type="text" class="calculator-input form-control" id="9">
+                </div>
+                <div class="mb-3">
+                    <label for="10" class="form-label text-lg-center">Other reasonable expenses</label>
+                    <input type="text" class="calculator-input form-control" id="10">
+                </div>
+                <div class="mb-3">
+                    <label for="11" class="form-label text-lg-center">Salary due to employees</label>
+                    <input type="text" class="calculator-input form-control" id="11">
+                </div>
+            </div>
+            <hr>
+            <!-- ---------- paisa bolta bhai paisa -------------- -->
+            <h2 class="text-center">Zakatable assets</h2>
+            <div class="paisa text-center my-3">
+                <div class="mb-3">
+                    <label for="01" class="form-label text-lg-center">Gold (In any form)<br> <a
+                            href="https://www.goodreturns.in/gold-rates/" target="_blank">today's rate of gold
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control gold" id="01">
+                </div>
+                <div class="mb-3">
+                    <label for="02" class="form-label text-lg-center">Silver (In any form)<br> <a
+                            href="https://www.goodreturns.in/silver-rates/" target="_blank">today's rate og silver
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control silver" id="02">
+                </div>
+                <div class="mb-3">
+                    <label for="03" class="form-label text-lg-center">Cash (for any need)</label>
+                    <input type="text" class="calculator-input form-control" id="03">
+                </div>
+                <div class="mb-3">
+                    <label for="04" class="form-label text-lg-center">Bank Balance</label>
+                    <input type="text" class="calculator-input form-control" id="04">
+                </div>
+                <div class="mb-3">
+                    <label for="05" class="form-label text-lg-center">Money lent or entrusted to someone</label>
+                    <input type="text" class="calculator-input form-control" id="05">
+                </div>
+                <div class="mb-3">
+                    <label for="06" class="form-label text-lg-center">Amount given in security</label>
+                    <input type="text" class="calculator-input form-control" id="06">
+                </div>
+                <div class="mb-3">
+                    <label for="07" class="form-label text-lg-center">The actual sum deposited in the insurance policy
+                        (ٰInsurance is prohibited in ISLAM)</label>
+                    <input type="text" class="calculator-input form-control" id="07">
+                </div>
+                <div class="mb-3">
+                    <label for="08" class="form-label text-lg-center">Foreign Currency (According to the current
+                        rate)<br><a target="_blank"
+                            href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">Currency
+                            Converter 🔗</a></label>
+                    <input type="text" class="calculator-input form-control" id="08">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
+                    <input type="text" class="calculator-input form-control" id="09" value="0">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident
+                            Fund</strong></label>
+                    <input type="text" class="calculator-input form-control" id="010" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="011" class="form-label text-lg-center">Current stock in shop/ warehouse, Raw
+                        material</label>
+                    <input type="text" class="calculator-input form-control" id="011">
+                </div>
+                <div class="mb-3">
+                    <label for="012" class="form-label text-lg-center">Shops, houses, vehicles, raw materials bought
+                        with
+                        the intention of selling
+                        (for which price has been paid)</label>
+                    <input type="text" class="calculator-input form-control" id="012">
+                </div>
+            </div>
 
-        <h2 class="text-center">Financial obligations</h2>
-        <div class="dene-wala text-center align-items-center">
-            <div class="mb-3">
-                <label for="1" class="form-label text-lg-center">Debt/ Loan taken</label>
-                <input type="text" class="calculator-input form-control" id="1">
-            </div>
-            <div class="mb-3">
-                <label for="2" class="form-label text-lg-center">Wife's unpaid dowry</label>
-                <input type="text" class="calculator-input form-control" id="2">
-            </div>
-            <div class="mb-3">
-                <label for="3" class="form-label text-lg-center">Unpaid Electricity Bill</label>
-                <input type="text" class="calculator-input form-control" id="3">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="4" class="form-label text-lg-center">unpaid Gas bill</label>
-                <input type="text" class="calculator-input form-control" id="4" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="5" class="form-label text-lg-center">unpaid Water Tax/bill</label>
-                <input type="text" class="calculator-input form-control" id="5">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
-                <input type="text" class="calculator-input form-control" id="6" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="7" class="form-label text-lg-center">unpaid House Rent</label>
-                <input type="text" class="calculator-input form-control" id="7">
-            </div>
-            <div class="mb-3">
-                <label for="8" class="form-label text-lg-center">unpaid Shop Rent</label>
-                <input type="text" class="calculator-input form-control" id="8">
-            </div>
-            <div class="mb-3">
-                <label for="9" class="form-label text-lg-center">unpaid Warehouse Rent</label>
-                <input type="text" class="calculator-input form-control" id="9">
-            </div>
-            <div class="mb-3">
-                <label for="10" class="form-label text-lg-center">Other reasonable expenses</label>
-                <input type="text" class="calculator-input form-control" id="10">
-            </div>
-            <div class="mb-3">
-                <label for="11" class="form-label text-lg-center">Salary due to employees</label>
-                <input type="text" class="calculator-input form-control" id="11">
+            <!-- -----------------------results------------ -->
+            <div class="result my-3" id="result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="zimmedariyan"></td>
+                            <td>Total liabilities</td>
+                            <td id="milkiyat"></td>
+                            <td>Total worth</td>
+                        </tr>
+                        <tr>
+                            <td id="total"></td>
+                            <td>Total ownership</td>
+                            <td id="zakat"></td>
+                            <td>Amount of Zakat</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <hr>
-        <!-- ---------- paisa bolta bhai paisa -------------- -->
-        <h2 class="text-center">Value of Zakatable assets</h2>
-        <div class="paisa text-center my-3">
-            <div class="mb-3">
-                <label for="01" class="form-label text-lg-center">Gold (In any form)<br> <a
-                        href="https://www.goodreturns.in/gold-rates/" target="_blank">today's rate of gold
-                        🔗</a></label>
-                <input type="text" class="calculator-input form-control gold" id="01">
+        <div class="row">
+            <div class="col">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="calculate" onclick="calculate()">Calculate</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="02" class="form-label text-lg-center">Silver (In any form)<br> <a
-                        href="https://www.goodreturns.in/silver-rates/" target="_blank">today's rate og silver
-                        🔗</a></label>
-                <input type="text" class="calculator-input form-control silver" id="02">
+            <div class="col" id="print">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="save" onclick="save()">Save as PDF</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="03" class="form-label text-lg-center">Cash (for any need)</label>
-                <input type="text" class="calculator-input form-control" id="03">
-            </div>
-            <div class="mb-3">
-                <label for="04" class="form-label text-lg-center">Accound Balance</label>
-                <input type="text" class="calculator-input form-control" id="04">
-            </div>
-            <div class="mb-3">
-                <label for="05" class="form-label text-lg-center">Money lent or entrusted to someone</label>
-                <input type="text" class="calculator-input form-control" id="05">
-            </div>
-            <div class="mb-3">
-                <label for="06" class="form-label text-lg-center">Amount given in security</label>
-                <input type="text" class="calculator-input form-control" id="06">
-            </div>
-            <div class="mb-3">
-                <label for="07" class="form-label text-lg-center">The actual sum deposited in the insurance policy
-                    (ٰInsurance is prohibited)</label>
-                <input type="text" class="calculator-input form-control" id="07">
-            </div>
-            <div class="mb-3">
-                <label for="08" class="form-label text-lg-center">गैर मुल्की करेंसी (मौजूदा रेट के मुताबिक़)<br><a
-                        target="_blank"
-                        href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">करेंसी
-                        कनवर्टर 🔗</a></label>
-                <input type="text" class="calculator-input form-control" id="08">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
-                <input type="text" class="calculator-input form-control" id="09" value="0">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident Fund</strong></label>
-                <input type="text" class="calculator-input form-control" id="010" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="011" class="form-label text-lg-center">Current stock in shop/ warehouse, Raw
-                    material</label>
-                <input type="text" class="calculator-input form-control" id="011">
-            </div>
-            <div class="mb-3">
-                <label for="012" class="form-label text-lg-center">Shops, houses, vehicles, raw materials bought with
-                    the intention of selling
-                    (for which price has been paid)</label>
-                <input type="text" class="calculator-input form-control" id="012">
-            </div>
+        </div>
+        <div class="row text-center">
+            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر PDF شیئر کریں"
+                target="_blank" id="whatsapp" aria-label="Chat on WhatsApp" onclick="share()"
+                href="https://wa.me/919169823114">
+                <button class="btn btn-success">Show the PDF to Mufti sahab</button>
+            </a>
+            <!-- <button class="btn btn-primary" id="sImg" onclick="shareImage()">Share image</button> -->
         </div>
 
-        <!-- -----------------------results------------ -->
-        <div class="result my-3" id="result">
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="zimmedariyan"></td>
-                        <td>Total liabilities</td>
-                        <td id="milkiyat"></td>
-                        <td>Total worth</td>
-                    </tr>
-                    <tr>
-                        <td id="total"></td>
-                        <td>Total ownership</td>
-                        <td id="zakat"></td>
-                        <td>Amount of Zakat</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="text-center my-3">
-            <button class="btn btn-primary" id="calculate" onclick="calculate()">Calculate</button>
-        </div>
         <!-- 
     <div class="secondry text-center my-3 mx-2">
         <p>جب آپ سب چیزوں کے سامنے رقم کا خانہ پر کرلیں تو نمبر دو کی ٹوٹل رقم کونمبرایک کی ٹوٹل رقم سے منہا ( مائنس )
@@ -238,11 +259,11 @@
             <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
         </div>
     </div>
-    <footer class="text-center my-0">
+    <footer class="text-center mt-3">
         <p>Copyright 2023 &#169
             <br>
             Designed and Developed by:- <a href="https://www.kmf.in" target="_blank">Khadim-e-Millat Welfare
-                Foundation</a>
+                Foundation</a> all rights reserved
         </p>
     </footer>
     <!-- ------------- end of body ----------- -->

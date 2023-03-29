@@ -12,7 +12,7 @@ body {
     margin: 10px;
 }
 
-.flex label{
+.flex label {
     align-self: center;
 }
 
@@ -51,6 +51,7 @@ tr td {
     margin: 0.25vw;
     text-align: center;
 }
+
 input[type=text] {
     /* width: 60px; */
     font-family: "arial";
@@ -93,18 +94,45 @@ tr th {
     display: none;
 }
 
-footer{
+#print,
+#share {
+    display: none;
+}
+
+#result table {
+    display: flex;
+    flex-direction: column;
+}
+
+#zimmedariyan,
+#total {
+    width: max-content;
+}
+
+footer {
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    bottom: 0;
-    height: max-content;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: blue;
+}
+
+/* ------------printing issue on phone----------- */
+@media print and (max-width: 480px) {
+    body * {
+        display: none !important;
+    }
+
+    #toPrint,
+    #toPrint * {
+        display: block !important;
+    }
+
+    #toPrint {
+        position: static !important;
+        overflow: visible !important;
+    }
 }

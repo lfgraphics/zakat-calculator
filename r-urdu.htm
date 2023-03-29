@@ -50,10 +50,10 @@
         <div class="container-fluid">
             <a class="navbar-brand" style="font-family: Arial, Helvetica, sans-serif;" href="http://kmwf.in/"
                 target="_blank">Khadim-e-millat Welfare Foundation</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
             <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
             <select name="languages" class="text-center my-3" id="lang" onchange="language()">
                 <option value="u" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
@@ -91,143 +91,165 @@
 
 
         <!-- ----------------- form-type ------------------- -->
+        <div class="toPrint" id="toPrint">
+            <h2 class="text-center">Mali Zimmedariyan</h2>
+            <div class="dene-wala text-center align-items-center">
+                <div class="mb-3">
+                    <label for="1" class="form-label text-lg-center">Liya huwa qarz</label>
+                    <input type="text" class="calculator-input form-control" id="1">
+                </div>
+                <div class="mb-3">
+                    <label for="2" class="form-label text-lg-center">Bivi ka Ghair Ada shuda Mahar</label>
+                    <input type="text" class="calculator-input form-control" id="2">
+                </div>
+                <div class="mb-3">
+                    <label for="3" class="form-label text-lg-center">Bijli ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="3">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="4" class="form-label text-lg-center">Gas ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="4" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="5" class="form-label text-lg-center">Pani ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="5">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="6" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="7" class="form-label text-lg-center">Makan ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="7">
+                </div>
+                <div class="mb-3">
+                    <label for="8" class="form-label text-lg-center">Dukan ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="8">
+                </div>
+                <div class="mb-3">
+                    <label for="9" class="form-label text-lg-center">Godam ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="9">
+                </div>
+                <div class="mb-3">
+                    <label for="10" class="form-label text-lg-center">Digar wajibul ada akhrajat</label>
+                    <input type="text" class="calculator-input form-control" id="10">
+                </div>
+                <div class="mb-3">
+                    <label for="11" class="form-label text-lg-center">Mulazimin ki wajibul ada tankhwah</label>
+                    <input type="text" class="calculator-input form-control" id="11">
+                </div>
+            </div>
+            <hr>
+            <!-- ---------- paisa bolta bhai paisa -------------- -->
+            <h2 class="text-center">Qabile zakat asason ki maaliyat</h2>
+            <div class="paisa text-center my-3">
+                <div class="mb-3">
+                    <label for="01" class="form-label text-lg-center">Sona (chahe kisi bhi soorat men ho)<br> <a
+                            href="https://www.goodreturns.in/gold-rates/" target="_blank">Sone ki mojooda qeemat
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control gold" id="01">
+                </div>
+                <div class="mb-3">
+                    <label for="02" class="form-label text-lg-center">Chandi (chahe kisi bhi soorat men ho)<br> <a
+                            href="https://www.goodreturns.in/silver-rates/" target="_blank">Chandi ki mojooda qeemat
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control silver" id="02">
+                </div>
+                <div class="mb-3">
+                    <label for="03" class="form-label text-lg-center">Naqad cash (Chahe kisi bhi zaroorat ke liye
+                        ho)</label>
+                    <input type="text" class="calculator-input form-control" id="03">
+                </div>
+                <div class="mb-3">
+                    <label for="04" class="form-label text-lg-center">Bank balance</label>
+                    <input type="text" class="calculator-input form-control" id="04">
+                </div>
+                <div class="mb-3">
+                    <label for="05" class="form-label text-lg-center">Kisi ko Udhar ya amanat dee gai raqam</label>
+                    <input type="text" class="calculator-input form-control" id="05">
+                </div>
+                <div class="mb-3">
+                    <label for="06" class="form-label text-lg-center">Security men di gai raqam</label>
+                    <input type="text" class="calculator-input form-control" id="06">
+                </div>
+                <div class="mb-3">
+                    <label for="07" class="form-label text-lg-center">Ensurance Policy me asal jama shuda raqam
+                        (ٰInsurance
+                        na
+                        jaez hai)</label>
+                    <input type="text" class="calculator-input form-control" id="07">
+                </div>
+                <div class="mb-3">
+                    <label for="08" class="form-label text-lg-center">Ghair mulki Currency (Mojooda rate ke
+                        mutabiq)<br><a target="_blank"
+                            href="https://www.google.com/search?q=uae+to+inr&rlz=1C1CHBF_enIN1002IN1002&oq=uae+to+inr&aqs=chrome..69i57.6729j0j9&sourceid=chrome&ie=UTF-8">Currency
+                            Converter 🔗</a></label>
+                    <input type="text" class="calculator-input form-control" id="08">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
+                    <input type="text" class="calculator-input form-control" id="09" value="0">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident
+                            Fund</strong></label>
+                    <input type="text" class="calculator-input form-control" id="010" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="011" class="form-label text-lg-center">Stock (Dookan/ Godam men mojooda mal), Kachcha
+                        mal</label>
+                    <input type="text" class="calculator-input form-control" id="011">
+                </div>
+                <div class="mb-3">
+                    <label for="012" class="form-label text-lg-center">Bechne ki naiyat se kharidi gai dukan, makan,
+                        gadi,
+                        Kham
+                        mal (jiski qeemat ada kar di gai ho)</label>
+                    <input type="text" class="calculator-input form-control" id="012">
+                </div>
+            </div>
 
-        <h2 class="text-center">Mali Zimmedariyan</h2>
-        <div class="dene-wala text-center align-items-center">
-            <div class="mb-3">
-                <label for="1" class="form-label text-lg-center">Liya huwa qarz</label>
-                <input type="text" class="calculator-input form-control" id="1">
-            </div>
-            <div class="mb-3">
-                <label for="2" class="form-label text-lg-center">Bivi ka Ghair Ada shuda Mahar</label>
-                <input type="text" class="calculator-input form-control" id="2">
-            </div>
-            <div class="mb-3">
-                <label for="3" class="form-label text-lg-center">Bijli ka wajibul ada bil</label>
-                <input type="text" class="calculator-input form-control" id="3">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="4" class="form-label text-lg-center">Gas ka wajibul ada bil</label>
-                <input type="text" class="calculator-input form-control" id="4" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="5" class="form-label text-lg-center">Pani ka wajibul ada bil</label>
-                <input type="text" class="calculator-input form-control" id="5">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
-                <input type="text" class="calculator-input form-control" id="6" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="7" class="form-label text-lg-center">Makan ka wajibul ada kiraya</label>
-                <input type="text" class="calculator-input form-control" id="7">
-            </div>
-            <div class="mb-3">
-                <label for="8" class="form-label text-lg-center">Dukan ka wajibul ada kiraya</label>
-                <input type="text" class="calculator-input form-control" id="8">
-            </div>
-            <div class="mb-3">
-                <label for="9" class="form-label text-lg-center">Godam ka wajibul ada kiraya</label>
-                <input type="text" class="calculator-input form-control" id="9">
-            </div>
-            <div class="mb-3">
-                <label for="10" class="form-label text-lg-center">Digar wajibul ada akhrajat</label>
-                <input type="text" class="calculator-input form-control" id="10">
-            </div>
-            <div class="mb-3">
-                <label for="11" class="form-label text-lg-center">Mulazimin ki wajibul ada tankhwah</label>
-                <input type="text" class="calculator-input form-control" id="11">
+            <!-- -----------------------results------------ -->
+            <div class="result my-3" id="result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="zimmedariyan"></td>
+                            <td>Kul zimma dariyan</td>
+                            <td id="milkiyat"></td>
+                            <td>kul maliyat</td>
+                        </tr>
+                        <tr>
+                            <td id="total"></td>
+                            <td>Kul milkiyat</td>
+                            <td id="zakat"></td>
+                            <td>Zakaat ki raqam</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <hr>
-        <!-- ---------- paisa bolta bhai paisa -------------- -->
-        <h2 class="text-center">Qabile zakat asason ki maaliyat</h2>
-        <div class="paisa text-center my-3">
-            <div class="mb-3">
-                <label for="01" class="form-label text-lg-center">Sona (chahe kisi bhi soorat men ho)<br> <a
-                        href="https://www.goodreturns.in/gold-rates/" target="_blank">Sone ki mojooda qeemat
-                        🔗</a></label>
-                <input type="text" class="calculator-input form-control gold" id="01">
+        <div class="row">
+            <div class="col">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="calculate" onclick="calculate()">Hisab kren</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="02" class="form-label text-lg-center">Chandi (chahe kisi bhi soorat men ho)<br> <a
-                        href="https://www.goodreturns.in/silver-rates/" target="_blank">Chandi ki mojooda qeemat
-                        🔗</a></label>
-                <input type="text" class="calculator-input form-control silver" id="02">
+            <div class="col" id="print">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="save" onclick="save()">PDF save kren</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="03" class="form-label text-lg-center">Naqad cash (Chahe kisi bhi zaroorat ke liye
-                    ho)</label>
-                <input type="text" class="calculator-input form-control" id="03">
-            </div>
-            <div class="mb-3">
-                <label for="04" class="form-label text-lg-center">Bank balance</label>
-                <input type="text" class="calculator-input form-control" id="04">
-            </div>
-            <div class="mb-3">
-                <label for="05" class="form-label text-lg-center">Kisi ko Udhar ya amanat dee gai raqam</label>
-                <input type="text" class="calculator-input form-control" id="05">
-            </div>
-            <div class="mb-3">
-                <label for="06" class="form-label text-lg-center">Security men di gai raqam</label>
-                <input type="text" class="calculator-input form-control" id="06">
-            </div>
-            <div class="mb-3">
-                <label for="07" class="form-label text-lg-center">Ensurance Policy me asal jama shuda raqam (ٰInsurance
-                    na
-                    jaez hai)</label>
-                <input type="text" class="calculator-input form-control" id="07">
-            </div>
-            <div class="mb-3">
-                <label for="08" class="form-label text-lg-center">Ghair mulki Currency (Mojooda rate ke mutabiq)<br><a
-                        target="_blank"
-                        href="https://www.google.com/search?q=uae+to+inr&rlz=1C1CHBF_enIN1002IN1002&oq=uae+to+inr&aqs=chrome..69i57.6729j0j9&sourceid=chrome&ie=UTF-8">Currency
-                        Converter 🔗</a></label>
-                <input type="text" class="calculator-input form-control" id="08">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
-                <input type="text" class="calculator-input form-control" id="09" value="0">
-            </div>
-            <div class="mb-3 visually-hidden">
-                <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident Fund</strong></label>
-                <input type="text" class="calculator-input form-control" id="010" value="0">
-            </div>
-            <div class="mb-3">
-                <label for="011" class="form-label text-lg-center">Stock (Dookan/ Godam men mojooda mal), Kachcha
-                    mal</label>
-                <input type="text" class="calculator-input form-control" id="011">
-            </div>
-            <div class="mb-3">
-                <label for="012" class="form-label text-lg-center">Bechne ki naiyat se kharidi gai dukan, makan, gadi,
-                    Kham
-                    mal (jiski qeemat ada kar di gai ho)</label>
-                <input type="text" class="calculator-input form-control" id="012">
-            </div>
+        </div>
+        <div class="row text-center">
+            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر PDF شیئر کریں"
+                target="_blank" id="whatsapp" aria-label="Chat on WhatsApp" onclick="share()"
+                href="https://wa.me/919169823114">
+                <button class="btn btn-success">mufti sahab ko dikhaen PDF</button>
+            </a>
+            <!-- <button class="btn btn-primary" id="sImg" onclick="shareImage()">Share image</button> -->
         </div>
 
-        <!-- -----------------------results------------ -->
-        <div class="result my-3" id="result">
-            <table>
-                <tbody>
-                    <tr>
-                        <td id="zimmedariyan"></td>
-                        <td>Kul zimma dariyan</td>
-                        <td id="milkiyat"></td>
-                        <td>kul maliyat</td>
-                    </tr>
-                    <tr>
-                        <td id="total"></td>
-                        <td>Kul milkiyat</td>
-                        <td id="zakat"></td>
-                        <td>Zakaat ki raqam</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="text-center my-3">
-            <button class="btn btn-primary" id="calculate" onclick="calculate()">Calculate</button>
-        </div>
         <!-- 
     <div class="secondry text-center my-3 mx-2">
         <p>جب آپ سب چیزوں کے سامنے رقم کا خانہ پر کرلیں تو نمبر دو کی ٹوٹل رقم کونمبرایک کی ٹوٹل رقم سے منہا ( مائنس )
@@ -242,11 +264,11 @@
             <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
         </div>
     </div>
-    <footer class="text-center my-0">
+    <footer class="text-center mt-3">
         <p>Copyright 2023 &#169
             <br>
             Designed and Developed by:- <a href="https://www.kmf.in" target="_blank">Khadim-e-Millat Welfare
-                Foundation</a>
+                Foundation</a> all rights reserved
         </p>
     </footer>
 
