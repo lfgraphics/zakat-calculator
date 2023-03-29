@@ -16,10 +16,10 @@ function language() {
 function calculate() {
     let maliyat = 0;
     for (let i = 1; i <= 12; i++) {
-      let id = "0" + i;
-      maliyat += Number(document.getElementById(id.toString()).value);
+        let id = "0" + i;
+        maliyat += Number(document.getElementById(id.toString()).value);
     }
-    
+
     let zimmadar = 0;
     for (let i = 1; i <= 11; i++) {
         zimmadar += Number(document.getElementById(i.toString()).value);
@@ -48,7 +48,7 @@ function calculate() {
 
 function save() {
     // Open a new window
-    let printWindow = window.open('', 'Print Window');
+    var printWindow = window.open('', 'Print Window');
     // Set the body content of the window as the div 'toPrint'
     printWindow.document.body.innerHTML = document.getElementById('toPrint').innerHTML;
     // Set the head section of the new window to the head section of the main page
@@ -72,133 +72,50 @@ function save() {
     }
     // Delay for 1 second before printing
     setTimeout(function () {
-        // Print the window
-        printWindow.print();
+        printWindow.print()
+        // set flag in localStorage when printing is finished
+        if (attemptingToPrint) {
+            localStorage.setItem('pdfPrintedAttempted', true);
+        }
     }, 1000);
-}
 
+    // set flag to indicate that the user is attempting to print
+    let attemptingToPrint = true;
 
+    // open print window and print the PDF
 
-/*
-// --------- save as png ---------
-function saveDivAsPNG(divId, imageName) {
-    // Select the div that you want to capture
-    const element = document.querySelector('#toPrint');
+    // check if the PDF is printed
+    if (window.matchMedia) {
+        let mediaQueryList = window.matchMedia('print');
+        mediaQueryList.addListener(function (mql) {
+            if (!mql.matches) {
+                // clear the flag if printing is finished
+                attemptingToPrint = false;
+                // set flag in localStorage when printing is finished
+                localStorage.setItem('pdfPrinted', true);
+                // update whatsapp button
+                document.getElementById("whatsapp").style.display = "block";
+            }
+        });
+    }
 
-    // Use html2canvas to capture the contents of the div
-    html2canvas(element).then(canvas => {
-        // Convert the canvas content to a data URL
-        const dataUrl = canvas.toDataURL('image/png');
-
-        // Save the data URL to local storage
-        localStorage.setItem('screenshot', dataUrl);
-
-        // Create a link element that downloads the screenshot
-        const link = document.createElement('a');
-        link.download = 'screenshot.png';
-        link.href = dataUrl;
-        document.body.appendChild(link);
-        link.click();
-    });
-}
-
-function saveDivAsPNG(divId, imageName) {
-    html2canvas(document.getElementById(divId)).then(function (canvas) {
-        let imgData = canvas.toDataURL('image/png');
-        try {
-            localStorage.setItem(imageName, imgData);
-            console.log('Image saved to localStorage.');
-        } catch (e) {
-            console.error('Error saving image to localStorage: ' + e);
-        }
-        let downloadLink = document.createElement('a');
-        downloadLink.setAttribute('download', imageName + '.png');
-        downloadLink.setAttribute('href', imgData);
-        downloadLink.click();
-    });
-}
-
-/*
-function save() {
-    saveDivAsPNG("toPrint", "my_image");
-
-    // check if image is saved in localStorage
-    if (localStorage.getItem("my_image")) {
-        $("#share").removeClass("hidden");
-    } else {
-        $("#share").addClass("hidden");
+    // check if the user attempted to print the PDF (even if the printing was not successful)
+    if (attemptingToPrint) {
+        localStorage.setItem('pdfPrintedAttempted', true);
     }
 }
 
-function share() {
-    function updateShareButton() {
-        const shareButton = document.getElementById('share');
-        const shareImage = document.getElementById('share-image');
+// ------------------ jhol khtm ------------
 
-        // Check if the image is saved in local storage
-        if (localStorage.getItem('my_image')) {
-            // Set the image source to the URL of the saved image
-            shareImage.src = localStorage.getItem('my_image');
-            // Show the share button
-            shareButton.style.display = 'inline-block';
-        } else {
-            // Hide the share button
-            shareButton.style.display = 'none';
-        }
-    }
-
-    // Call the updateShareButton function when the page loads
-    updateShareButton();
-
-}
-
-// ----------- share iaage from local storage -------------
-
-function shareImage() {
-    // Get the image from local storage
-    const myImage = localStorage.getItem('my_image');
-
-    // Create a new blob from the image data
-    const imageBlob = new Blob([myImage], { type: 'image/jpeg' });
-
-    // Create a new file object from the blob
-    const imageFile = new File([imageBlob], 'my_image.jpeg', { type: 'image/jpeg' });
-
-    // Create a new share API instance
-    const shareAPI = navigator.share;
-
-    // Check if the share API is supported
-    if (shareAPI && shareAPI.share) {
-        // Call the share API with the image file
-        shareAPI.share({
-            files: [imageFile],
-        })
-            .then(() => console.log('Image shared successfully'))
-            .catch((error) => console.error('Failed to share image', error));
-    } else {
-        console.warn('Share API not supported');
-    }
-}
-*/
 
 // ----------- jQuery -----------
 
 $(document).ready(function () {
-    /*
-    // check if image is saved in localStorage
-    if (localStorage.getItem("my_image")) {
-        document.getElementById('share').style.display = 'block';
-    } else {
-        document.getElementById('share').style.display = 'none';
-    }
-    */
-    // ------------ check if the pdf is saved -----------------
-    let shareButton = document.getElementById('share');
-    if (localStorage.getItem('printedPDF') !== null) {
-        shareButton.style.display = 'block';
-    } else {
-        shareButton.style.display = 'none';
-    }
+
+    // check if the PDF was printed or attempted to be printed
+    if (localStorage.getItem('pdfPrintedAttempted')) {
+        document.getElementById('whatsapp').style.display = "block";
+    } else { document.getElementById('whatsapp').style.display = "none"; }
 
     // ----------- calculator-input --------------
     // Add input event listener to all input fields with class "calculator-input"
