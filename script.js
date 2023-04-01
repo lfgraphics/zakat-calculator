@@ -1,15 +1,15 @@
 function language() {
     let language = document.getElementById("lang").value;
+    let currentUrl = window.location.href;
 
-    if (language == "u") {
-        window.open('/zakat-calculator', '_self');
-    } else if (language == "e") {
-        window.open('/zakat-calculator/e.htm', '_self')
-    } else if (language == "ru") {
-        window.open('/zakat-calculator/r-urdu.htm', '_self')
+
+    if (currentUrl.indexOf("roman-urdu") !== -1 || currentUrl.indexOf("english") !== -1 || currentUrl.indexOf("hindi") !== -1) {
+        currentUrl = currentUrl.replace("roman-urdu/", language).replace("english/", language).replace("hindi/", language);
+        window.open(currentUrl, '_self')
     } else {
-        window.open('/zakat-calculator/hi.htm', '_self');
+        window.open(`${currentUrl + language}`, '_self')
     }
+
 }
 
 
@@ -104,7 +104,7 @@ function save() {
         localStorage.setItem('pdfPrintedAttempted', true);
     }
 
-    
+
     // check if the PDF was printed or attempted to be printed
     if (localStorage.getItem('pdfPrintedAttempted')) {
         document.getElementById('whatsapp').style.display = "block";

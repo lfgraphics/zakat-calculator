@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HY9174LNC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4HY9174LNC');
+    </script>
+    <meta name="description" content="Free Zakat Calculator">
+    <meta name="keywords"
+        content="zakat, Zakat, Sakat, زکوٰۃ, زکات, zakat calculator,zakat calculater, Zakat Calculator, زکوٰۃ کیلکیولیٹر, زکات کیلکولیٹر, جاکات کیکولیٹر, jakat, jakaat, jakat calculator, jakat calculater, wafaqul masajid zakat calculator, wafaqul masajid, khadime millat, khadime millat zakat calculator, وفاق المساجد زکوٰۃ کیلکیولیٹر, خادم ملت زکوٰۃ کیلکیولیٹر, وفاق المساجد, ख़ादिम मिल्लत जकात कैल्क्यूलेटर, वाफकुल मसजिद ज़कात कैल्क्यूलेटर, वफाकुल मसजिद">
+    <meta name="author" content="Taha Kazmi, LF Graphics">
+    <!-- ---------------- needed -------------- -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- -------------------bootstrap link--------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- ---------------------google fonts--------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <!-- ---------------------- jQuery ------------------ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ------------------------local-------------- -->
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+    <title>Zakat Calculator</title>
+    <!-- ----------------style for this------- -->
+    <style>
+        table,
+        thead,
+        th,
+
+        .table {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body style="font-family: 'arial';">
+    <!-- ------------ navebar ------------ -->
+    <nav class="navbar navbar-expand-lg text-center">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: Arial, Helvetica, sans-serif;" href="http://kmwf.in/"
+                target="_blank">Khadim-e-millat Welfare Foundation</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+            <select name="languages" class="text-center my-3" id="lang" onchange="language()">
+                <option value="" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
+                <option value="roman-urdu" selected>Roman Urdu</option>
+                <option value="english">English</option>
+                <option value="hindi">हिंदी</option>
+            </select>
+            <!-- </div> -->
+        </div>
+    </nav>
+
+
+    <!-- ------------ head --------------- -->
+    <div class="container">
+        <div class="head text-center my-3 mx-2">
+            <div class="primary text-center my-3">
+                <h1>Zakat ki adaegi ke liye madadgar Calculator</h1>
+                <p class="text-center">Zere intezam: Idara Wafaqul Masajid <a href="http://kmwf.in/"
+                        target="_blank">Khadim-e-Millat Welfare Foundation</a></p>
+                <div class="text-center" id="logo">
+                    <a href="../logo.png" target="_blank">
+                        <img src="../logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="secondry text-center my-3">
+                <p>Sabse pahle zakat wajib hone ki qamri tarikh ka ta'yin kren len, Zakat wajib hone ki qamri Islami
+                    tarikh.....
+                    <br>
+                    Aapki
+                    Zakat ki muqarrarah tarih aa jae to us din apne tamam maal ka hisab market rate ke mutabiq kar len
+                </p>
+            </div>
+        </div>
+
+
+        <!-- ----------------- form-type ------------------- -->
+        <div class="toPrint" id="toPrint">
+            <h2 class="text-center">Mali Zimmedariyan</h2>
+            <div class="dene-wala text-center align-items-center">
+                <div class="mb-3">
+                    <label for="1" class="form-label text-lg-center">Liya huwa qarz/ EMI (ghair jama shuda)</label>
+                    <input type="text" class="calculator-input form-control" id="1">
+                </div>
+                <div class="mb-3">
+                    <label for="2" class="form-label text-lg-center">Bivi ka Ghair Ada shuda Mahar</label>
+                    <input type="text" class="calculator-input form-control" id="2">
+                </div>
+                <div class="mb-3">
+                    <label for="3" class="form-label text-lg-center">Bijli ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="3">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="4" class="form-label text-lg-center">Gas ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="4" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="5" class="form-label text-lg-center">Pani ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="5">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="6" class="form-label text-lg-center">Teli Phone ka wajibul ada bil</label>
+                    <input type="text" class="calculator-input form-control" id="6" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="7" class="form-label text-lg-center">Makan ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="7">
+                </div>
+                <div class="mb-3">
+                    <label for="8" class="form-label text-lg-center">Dukan ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="8">
+                </div>
+                <div class="mb-3">
+                    <label for="9" class="form-label text-lg-center">Godam ka wajibul ada kiraya</label>
+                    <input type="text" class="calculator-input form-control" id="9">
+                </div>
+                <div class="mb-3">
+                    <label for="10" class="form-label text-lg-center">Digar wajibul ada akhrajat</label>
+                    <input type="text" class="calculator-input form-control" id="10">
+                </div>
+                <div class="mb-3">
+                    <label for="11" class="form-label text-lg-center">Mulazimin ki wajibul ada tankhwah</label>
+                    <input type="text" class="calculator-input form-control" id="11">
+                </div>
+            </div>
+            <hr>
+            <!-- ---------- paisa bolta bhai paisa -------------- -->
+            <h2 class="text-center">Qabile zakat asason ki maaliyat</h2>
+            <div class="paisa text-center my-3">
+                <div class="mb-3">
+                    <label for="01" class="form-label text-lg-center">Sona (chahe kisi bhi soorat men ho)<br> <a
+                            href="https://www.goodreturns.in/gold-rates/" target="_blank">Sone ki mojooda qeemat
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control gold" id="01">
+                </div>
+                <div class="mb-3">
+                    <label for="02" class="form-label text-lg-center">Chandi (chahe kisi bhi soorat men ho)<br> <a
+                            href="https://www.goodreturns.in/silver-rates/" target="_blank">Chandi ki mojooda qeemat
+                            🔗</a></label>
+                    <input type="text" class="calculator-input form-control silver" id="02">
+                </div>
+                <div class="mb-3">
+                    <label for="03" class="form-label text-lg-center">Naqad cash (Chahe kisi bhi zaroorat ke liye
+                        ho)</label>
+                    <input type="text" class="calculator-input form-control" id="03">
+                </div>
+                <div class="mb-3">
+                    <label for="04" class="form-label text-lg-center">Bank balance</label>
+                    <input type="text" class="calculator-input form-control" id="04">
+                </div>
+                <div class="mb-3">
+                    <label for="05" class="form-label text-lg-center">Kisi ko Udhar ya amanat dee gai raqam</label>
+                    <input type="text" class="calculator-input form-control" id="05">
+                </div>
+                <div class="mb-3">
+                    <label for="06" class="form-label text-lg-center">Security men di gai raqam</label>
+                    <input type="text" class="calculator-input form-control" id="06">
+                </div>
+                <div class="mb-3">
+                    <label for="07" class="form-label text-lg-center">Ensurance Policy me asal jama shuda raqam
+                        (ٰInsurance
+                        na
+                        jaez hai)</label>
+                    <input type="text" class="calculator-input form-control" id="07">
+                </div>
+                <div class="mb-3">
+                    <label for="08" class="form-label text-lg-center">Ghair mulki Currency (Mojooda rate ke
+                        mutabiq)<br><a target="_blank"
+                            href="https://www.google.com/search?q=uae+to+inr&rlz=1C1CHBF_enIN1002IN1002&oq=uae+to+inr&aqs=chrome..69i57.6729j0j9&sourceid=chrome&ie=UTF-8">Currency
+                            Converter 🔗</a></label>
+                    <input type="text" class="calculator-input form-control" id="08">
+                </div>
+                <div class="mb-3 d-none">
+                    <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
+                    <input type="text" class="calculator-input form-control" id="09" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="010" class="form-label text-lg-center">Provident Fund (apne akhtiyar se ktwai gai kul raqam)</label>
+                    <input type="text" class="calculator-input form-control" id="010" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="011" class="form-label text-lg-center">Stock (Dookan/ Godam men mojooda mal), Kachcha
+                        mal</label>
+                    <input type="text" class="calculator-input form-control" id="011">
+                </div>
+                <div class="mb-3">
+                    <label for="012" class="form-label text-lg-center">Bechne ki naiyat se kharidi gai dukan, makan,
+                        gadi,
+                        Kham
+                        mal (jiski qeemat ada kar di gai ho)</label>
+                    <input type="text" class="calculator-input form-control" id="012">
+                </div>
+            </div>
+
+            <!-- -----------------------results------------ -->
+            <div class="result my-3" id="result">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="zimmedariyan"></td>
+                            <td>Kul zimma dariyan</td>
+                            <td id="milkiyat"></td>
+                            <td>kul maliyat</td>
+                        </tr>
+                        <tr>
+                            <td id="total"></td>
+                            <td>Kul milkiyat</td>
+                            <td id="zakat"></td>
+                            <td>Zakaat ki raqam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="calculate" onclick="calculate()">Hisab kren</button>
+                </div>
+            </div>
+            <div class="col" id="print">
+                <div class="text-center my-3">
+                    <button class="btn btn-primary" id="save" onclick="save()">PDF save kren</button>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <a class="text-decoration-none" title="مفتی محمد داؤد صاحب قاسمی کو واٹس ایپ پر PDF شیئر کریں"
+                target="_blank" id="whatsapp" aria-label="Chat on WhatsApp" onclick="share()"
+                href="https://wa.me/919169823114">
+                <button class="btn btn-success">mufti sahab ko dikhaen PDF</button>
+            </a>
+            <!-- <button class="btn btn-primary" id="sImg" onclick="shareImage()">Share image</button> -->
+        </div>
+
+        <!-- 
+    <div class="secondry text-center my-3 mx-2">
+        <p>جب آپ سب چیزوں کے سامنے رقم کا خانہ پر کرلیں تو نمبر دو کی ٹوٹل رقم کونمبرایک کی ٹوٹل رقم سے منہا ( مائنس )
+            کرلیں۔ باقی جو رقم بچے آپ نے صرف اس کی زکوٰۃ ڑھائی فیصد (2.5) یعنی چالیسواں حصہ ادا کرنی ہے۔ جیسے ایک لاکھ
+            روپے میں سے 2500 روپے۔
+        </p>
+    </div> -->
+        <!-- -------------- msael-e- zakat ------------- -->
+        <section dir="" class="masael">
+            <div class="my-3">
+                <h3 class="text-center my-3">Zakaat ada krne se pahle darjzeel masael ka janna zaroori hai</h3>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Mustahiqeene zakat yani zakat kisko ada kren?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Allah ta'la ne soore tauba ayat number 60 men 8 mustahiqeen-e-zakat ka zikr kiya hai.
+                                </p>
+                                <br>
+                                <ol>
+
+                                    <li>Faqeer yani wo shaqs jiske paas kuch thoda maal-o-asbab hai lekin nisab ke
+                                        barabar nahin
+                                    </li>
+                                    <li>Miskeen yani woh shakhs jiske pas kuch bhi na ho
+                                    </li>
+                                    <li>Jo karkun zakat wasool karne par muta'yyan hain
+                                    </li>
+                                    <li> Jin ki dil joi karna manzoor ho </li>
+                                    <li>Woh Ghulam jiski azadi matloob ho
+                                    </li>
+                                    <li>Qarzdar yani woh shakhs jiske zimme logon ka qarz ho aur uske pas qarz se bacha
+                                        hua bamiqdar-e-Nisab koi mal na ho
+                                    </li>
+                                    <li>Allah ke raste me jihad karne wala
+                                    </li>
+                                    <li>Musafir jo halate safar men tang dast ho gaya ho
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Masraf-e-Zakat
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Masraf-e-Zakat: Insani muashre ka teesra tabqa jo ghurbat ki sharai lakeer se neeche
+                                    jeeta hai bashart-e-ki:
+                                </p>
+                                <br>
+                                <ol>
+                                    <li>GHair muslim na ho (Ghair muslim ko sirf nafli sadqa diya ja sakta hai)</li>
+                                    <li>Hozoor-e-akram ﷺ ke khandan (yani Hashmi/ sayyad) se na ho</li>
+                                    <li>Zakat dene wala qareebi Rishtedar na ho. Qaribi rishtedar jinse insan paida hua
+                                        walid, walida, dada, dadi, nana, nani.
+                                    </li>
+                                    <br>
+                                    <p>Ya jo insan se paida huwa yani beta, beti, pota, poti, nawasa, nawasi.
+                                        <br>
+                                        Qaribi ta'alluqdar Miyan Bivi (Ek doosre ko Zakat nahin de sakte)
+                                    </p>
+                                </ol>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="row d-flex" dir="ltr">
+                                    <div class="col flex-row text-center">
+                                        <div class="btn-containerr">
+                                            <button class="btn btn-primary w-50 my-1">Kafir (Ghair Muslim)
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">Sayyad/ Hashmi
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">Miyan/ Bivi
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">Osool-o-Furoo' <br> Man, Bap,
+                                                dada, dadi, nana, nani, apni aulad aur aulad ki aulad
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center flex-row-reverse">
+                                        <button class="btn btn-primary w-75 h-75">Yah afrad khwah kis qadar ghraeeb ya faqeer hon
+                                            <br>
+                                            <br>
+                                            (Yani Saha-e-Nisab na hon) phirbhi unko zakat nahin dee ja sakti.
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="text-center mt-3">
+        <p>Copyright 2023 &#169
+            <br>
+            Designed and Developed by:- <a href="https://www.kmf.in" target="_blank">Khadim-e-Millat Welfare
+                Foundation</a> all rights reserved
+        </p>
+    </footer>
+
+    <!-- ------------- end of body ----------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

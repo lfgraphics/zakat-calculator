@@ -29,8 +29,8 @@
     <!-- ---------------------- jQuery ------------------ -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- ------------------------local-------------- -->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
     <title>ज़कात कैल्कुलेटर</title>
     <!-- ----------------style for this------- -->
     <style>
@@ -52,10 +52,10 @@
                 target="_blank">ख़ादिमे मिल्लत वेलफेयर फाउन्डेशन</a>
             <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
             <select name="languages" class="text-center my-3" id="lang" onchange="language()">
-                <option value="u" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
-                <option value="ru">Roman Urdu</option>
-                <option value="e">English</option>
-                <option value="h" selected>हिंदी</option>
+                <option value="" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
+                <option value="roman-urdu">Roman Urdu</option>
+                <option value="english">English</option>
+                <option value="hindi" selected>हिंदी</option>
             </select>
             <!-- </div> -->
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -74,8 +74,8 @@
                 <p class="text-center">ज़ेरे इंतेज़ाम: इदारा वफ़ाक़ुल मसाजिद <a href="http://kmwf.in/"
                         target="_blank">ख़ादिमे मिल्लत वेलफ़ेयर फाउंडेशन</a></p>
                 <div class="text-center" id="logo">
-                    <a href="logo.png" target="_blank">
-                        <img src="logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
+                    <a href="../logo.png" target="_blank">
+                        <img src="../logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
                     </a>
                 </div>
             </div>
@@ -94,7 +94,7 @@
             <h2 class="text-center">माली जिम्मेदारियां</h2>
             <div class="dene-wala text-center align-items-center">
                 <div class="mb-3">
-                    <label for="1" class="form-label text-lg-center">लिया हुआ कर्ज़</label>
+                    <label for="1" class="form-label text-lg-center">लिया हुआ कर्ज़/ ग़ैर जमा शुदा ई एम् आई</label>
                     <input type="text" class="calculator-input form-control" id="1">
                 </div>
                 <div class="mb-3">
@@ -187,9 +187,8 @@
                     <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
                     <input type="text" class="calculator-input form-control" id="09" value="0">
                 </div>
-                <div class="mb-3 d-none">
-                    <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident
-                            Fund</strong></label>
+                <div class="mb-3">
+                    <label for="010" class="form-label text-lg-center">प्रोविडेंट फण्ड (अपने अख्तियार से कटवाई गई कुल रक़म)</label>
                     <input type="text" class="calculator-input form-control" id="010" value="0">
                 </div>
                 <div class="mb-3">
@@ -256,12 +255,97 @@
                 روپے میں سے 2500 روپے۔
             </p>
         </div> -->
-        <div class="my-3">
-            <h3 class="text-center my-3">जकात अदा करने से पहले नीचे दी गई बातों को जानना ज़रूरी है</h3>
-            <a href="media/1.jpg"><img src="media/1.jpg" class="img-fluid"></a>
-            <a href="media/2.jpg"><img src="media/2.jpg" class="img-fluid"></a>
-            <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
-        </div>
+        <!-- -------------- msael-e- zakat ------------- -->
+        <section class="masael">
+            <div class="my-3">
+                <h3 class="text-center my-3">जकात अदा करने से पहले निम्नलिखित बातों को जानना जरूरी है</h3>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                योग्य लोग किसे जकात अदा करें?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>सूरत अल-तौबा की आयत 60 में अल्लाह तआला ने 8 जकात के लायक लोगों का जिक्र किया है:
+                                </p>
+                                <br>
+                                <ol>
+
+                                    <li>फ़क़ीर का अर्थ है एक ऐसा व्यक्ति जिसके पास कुछ धन और संसाधन हों लेकिन पाठ्यक्रम के बराबर न हो।
+                                    </li>
+                                    <li>निर्धन का अर्थ है जिसके पास कुछ भी नहीं है।
+                                    </li>
+                                    <li>जो कार्यकर्ता जकात पाने के लिए दृढ़ संकल्पित हैं।
+                                    </li>
+                                    <li>किससे विनती करना स्वीकार्य है।
+                                    </li>
+                                    <li>एक गुलाम जिसकी स्वतंत्रता वांछित है।
+                                    </li>
+                                    <li>कर्जदार का मतलब उस व्यक्ति से है जो लोगों के कर्ज के लिए जिम्मेदार है और उसके पास कर्ज से कोई संपत्ति नहीं बची है।
+                                    </li>
+                                    <li>अल्लाह की राह में जिहाद।
+                                    </li>
+                                    <li>एक यात्री जो यात्रा के दौरान व्यथित हो गया है।
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                जकात खर्च करना
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>ज़कात देना: मानव समाज का तीसरा वर्ग जो शरिया गरीबी रेखा से नीचे रहता है, बशर तायका:
+                                </p>
+                                <br>
+                                <ol>
+                                    <li>गैर मुस्लिम मत बनो। (केवल मरणोपरांत दान गैर-मुस्लिमों को दिया जा सकता है)</li>
+                                    <li>वह पैगंबर मुहम्मद अली (यानी हाशमी, सैयद) के परिवार से नहीं होना चाहिए।</li>
+                                    <li>जकात देने वाले का कोई करीबी रिश्तेदार या करीबी रिश्तेदार नहीं है। करीबी रिश्तेदार जिनसे एक व्यक्ति का जन्म हुआ: पिता, माता, दादा, दादी, दादा, दादी ...</li>
+                                    <br>
+                                    <p>या जो एक इंसान से पैदा हुए हैं: बेटा, बेटी, पोता, पोती, पोता, परपोती...
+                                        निकट संबंधीः पति और पत्नी (एक दूसरे को जकात नहीं दे सकते)
+                                    </p>
+                                </ol>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="row d-flex" dir="ltr">
+                                    <div class="col flex-row text-center">
+                                        <div class="bt-container">
+                                            <button class="btn btn-primary w-50 my-1">काफिर (गैर मुस्लिम)
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">सैयद/हाशमी
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">पति पत्नी
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">माता-पिता, दादी, दादा, दादी, उनके बच्चों और उनके बच्चों के बच्चों के नियम और कानून
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center flex-row-reverse">
+                                        <button class="btn btn-primary w-75 h-75">चाहे ये लोग कितने ही गरीब और दरिद्र क्यों न हों
+                                            <br>
+                                            (यानी मैं शिक्षक नहीं हूं) फिर भी उन्हें जकात नहीं दी जा सकती
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
     <footer class="text-center mt-3">

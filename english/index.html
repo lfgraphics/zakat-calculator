@@ -29,8 +29,8 @@
     <!-- ---------------------- jQuery ------------------ -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- ------------------------local-------------- -->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
     <title>Zakaat calculaator</title>
     <!-- ----------------style for this------- -->
     <style>
@@ -52,10 +52,10 @@
                 target="_blank">Khadim-e-Millat Welfare Foundation</a>
             <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
             <select name="languages" class="text-center my-3" id="lang" onchange="language()">
-                <option value="u" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
-                <option value="ru">Roman Urdu</option>
-                <option value="e" selected>English</option>
-                <option value="h">हिंदी</option>
+                <option value="" style="font-family: 'Noto Nastaliq Urdu', serif;">اردو</option>
+                <option value="roman-urdu">Roman Urdu</option>
+                <option value="english" selected>English</option>
+                <option value="hindi">हिंदी</option>
             </select>
             <!-- </div> -->
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -74,8 +74,8 @@
                 <p class="text-center">Organized by: Idara Wafaqul Masjid <a href="http://kmwf.in/"
                         target="_blank">Khadim-e-Millat Welfare Foundation</a></p>
                 <div class="text-center" id="logo">
-                    <a href="logo.png" target="_blank">
-                        <img src="logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
+                    <a href="../logo.png" target="_blank">
+                        <img src="../logo.png" alt="Khadim-e-Millat Welfaare Foundation Logo" class="logo">
                     </a>
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <h2 class="text-center">Deductable assets</h2>
             <div class="dene-wala text-center align-items-center">
                 <div class="mb-3">
-                    <label for="1" class="form-label text-lg-center">Debt/ EMI taken</label>
+                    <label for="1" class="form-label text-lg-center">Debt/ unpaid EMI</label>
                     <input type="text" class="calculator-input form-control" id="1">
                 </div>
                 <div class="mb-3">
@@ -185,9 +185,8 @@
                     <label for="09" class="form-label text-lg-center">Bonds, Mukhtalif Certificate</label>
                     <input type="text" class="calculator-input form-control" id="09" value="0">
                 </div>
-                <div class="mb-3 d-none">
-                    <label for="010" class="form-label text-lg-center">Wasool shuda <strong>Provident
-                            Fund</strong></label>
+                <div class="mb-3">
+                    <label for="010" class="form-label text-lg-center">Provident Fund (the total amount deducted from your authority)</strong></label>
                     <input type="text" class="calculator-input form-control" id="010" value="0">
                 </div>
                 <div class="mb-3">
@@ -252,12 +251,108 @@
             روپے میں سے 2500 روپے۔
         </p>
     </div> -->
-        <div class="my-3">
-            <h3 class="text-center my-3">It is important to know the following things before paying Zakat</h3>
-            <a href="media/1.jpg"><img src="media/1.jpg" class="img-fluid"></a>
-            <a href="media/2.jpg"><img src="media/2.jpg" class="img-fluid"></a>
-            <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
-        </div>
+        <!-- -------------- msael-e- zakat ------------- -->
+        <section class="masael">
+            <div class="my-3">
+                <h3 class="text-center my-3">It is important to know the following issues before paying Zakat</h3>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                To whom should you pay Zakat?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Allah Ta'ala has mentioned 8 Zakat deserving people in Surat Al-Tawba verse 60:
+                                </p>
+                                <br>
+                                <ol>
+
+                                    <li>A faqir means a person who has some wealth and resources but not equal to the
+                                        amount of zakat.
+                                    </li>
+                                    <li>A poor person means a person who has nothing.
+                                    </li>
+                                    <li>Who are determined to receive Zakat.
+                                    </li>
+                                    <!-- <li> جن کی دلجوئی کرنا منظور ہو۔
+                                    </li> -->
+                                    <li>A slave whose freedom is desired.
+                                    </li>
+                                    <li> A debtor means a person who is responsible for people's debts and has no wealth
+                                        left over from the debt.
+                                    </li>
+                                    <li>Jihadist in the way of Allah.
+                                    </li>
+                                    <li>A passenger who has become poor during the journey.
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Spending Zakat
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Giving Zakat: The third class of human society who live below the Shariah poverty
+                                    line, Bashar Tayka
+                                    :
+                                </p>
+                                <br>
+                                <ol>
+                                    <li>Don't be a non-Muslim. (Only postpartum charity can be given to non-Muslims)
+                                    </li>
+                                    <li>Do not be from the family of the Holy Prophet ﷺ (i.e. Hashemi, Sayyid).</li>
+                                    <li>The person giving Zakat should not be a close relative. Close relatives from
+                                        whom a person was born: Father, Mother, Grandfather, Grandmother, Grandfather,
+                                        Grandmother...</li>
+                                    <br>
+                                    <p>Or those born from the human being: son, daughter, grandson, granddaughter,
+                                        grandson, great-granddaughter....Close relatives: husband and wife (cannot give
+                                        zakat to each other)
+                                    </p>
+                                </ol>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="row d-flex" dir="ltr">
+                                    <div class="col flex-row text-center">
+                                        <div class="bt-contaner en">
+                                            <button class="btn btn-primary w-50 my-1">Kafir (Non-Muslim)
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">Sayyad/ Hashmi
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">Spouse
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">The rules and regulations of
+                                                parents, grandmothers, grandfathers, grandmothers, their children and
+                                                their children's children
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center flex-row-reverse">
+                                        <button class="btn btn-primary w-75 h-75">No matter how poor and destitute these people are
+                                            <br>
+                                            (i.e. do not have nisab-e zakat) yet they cannot be given zakat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <footer class="text-center mt-3">
         <p>Copyright 2023 &#169

@@ -49,10 +49,10 @@
                 target="_blank">خادمِ ملت ویلفیئر فائونڈیشن</a>
             <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
             <select name="languages" class="text-center my-3" id="lang" onchange="language()">
-                <option value="u" selected>اردو</option>
-                <option value="ru">Roman Urdu</option>
-                <option value="e">English</option>
-                <option value="h">हिंदी</option>
+                <option value="" selected style="line-height: 0, ;padding: 0.5em;">اردو</option>
+                <option value="roman-urdu">Roman Urdu</option>
+                <option value="english">English</option>
+                <option value="hindi">हिंदी</option>
             </select>
             <!-- </div> -->
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -100,7 +100,7 @@
             <h2 class="text-center">مالی ذمہ داریاں</h2>
             <div class="dene-wala text-center align-items-center">
                 <div class="mb-3">
-                    <label for="1" class="form-label text-lg-center">لیا ہوا قرضہ</label>
+                    <label for="1" class="form-label text-lg-center">لیا ہوا قرضہ / ئ ئیم آئ کی غیر جمع شدہ رقم </label>
                     <input type="text" class="calculator-input form-control" id="1">
                 </div>
                 <div class="mb-3">
@@ -183,7 +183,7 @@
                     <input type="text" class="calculator-input form-control" id="07">
                 </div>
                 <div class="mb-3">
-                    <label for="08" class="form-label text-lg-center">غیر ملکی کرنسی (موجودہ ریٹ کے مطابق) <br><a
+                    <label for="08" class="form-label text-lg-center">غیر ملکی کرنسی (موجودہ ریٹ کے مطابق)<br><a
                             target="_blank"
                             href="https://www.google.com/search?rlz=1C1CHBF_enIN1002IN1002&q=dubai+riyal&spell=1&sa=X&ved=2ahUKEwiNot-p3rf9AhVxxjgGHQcrBD4QBSgAegQIBxAB&biw=1536&bih=714&dpr=1.25">Currency
                             Converter 🔗</a></label>
@@ -193,8 +193,8 @@
                     <label for="09" class="form-label text-lg-center">بانڈز، مختلف سرٹیفکٹ</label>
                     <input type="text" class="calculator-input form-control" id="09" value="0">
                 </div>
-                <div class="mb-3 d-none">
-                    <label for="010" class="form-label text-lg-center">وصول شدہ پروڈنٹ فنڈ</label>
+                <div class="mb-3">
+                    <label for="010" class="form-label text-lg-center">پروڈنٹ فنڈ(اپنے اختیار سے کٹوائ گئ کل رقم)</label>
                     <input type="text" class="calculator-input form-control" id="010" value="0">
                 </div>
                 <div class="mb-3">
@@ -261,14 +261,104 @@
                 روپے میں سے 2500 روپے۔
             </p>
         </div>
-        <div class="" id="demo"></div>
+
         <!-- -------------- msael-e- zakat ------------- -->
-        <div class="my-3">
-            <h3 class="text-center my-3">زکوٰۃ ادا کرنے سے پہلے درج ذیل مسائل کو جاننا ضروری ہے</h3>
-            <a href="media/1.jpg"><img src="media/1.jpg" class="img-fluid"></a>
-            <a href="media/2.jpg"><img src="media/2.jpg" class="img-fluid"></a>
-            <a href="media/3.jpg"><img src="media/3.jpg" class="img-fluid"></a>
-        </div>
+        <section dir="rtl" class="masael">
+            <div class="my-3">
+                <h3 class="text-center my-3">زکوٰۃ ادا کرنے سے پہلے درج ذیل مسائل کو جاننا ضروری ہے</h3>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                مستحقین زکوٰۃ یعنی زکوٰۃ کس کو ادا کریں؟
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>اللہ تعالیٰ نے سورۃ التوبہ آیت نمبر ۶۰ میں ۸ مستحقین زکوٰۃ کا ذکر کیا ہے:
+                                </p>
+                                <br>
+                                <ol>
+
+                                    <li> فقیر یعنی وہ شخص جس کے پاس کچھ تھوڑا مال و اسباب ہے لیکن نصاب کے برابر نہیں۔
+                                    </li>
+                                    <li> مسکین یعنی وہ شخص جس کے پاس کچھ بھی نہ ہو۔
+                                    </li>
+                                    <li> جو کارکن زکوٰۃ وصول کرنے پر متعین ہیں۔
+                                    </li>
+                                    <li> جن کی دلجوئی کرنا منظور ہو۔
+                                    </li>
+                                    <li> وہ غلام جسکی آزادی مطلوب ہو ۔
+                                    </li>
+                                    <li> قرضدار یعنی وہ شخص جس کے ذمہ لوگوں کا قرض ہو اور اس کے پاس قرض سے بچا ہو ابقدر
+                                        نصابکوئی مال نہ ہو۔
+                                    </li>
+                                    <li> اللہ کے راستے میں جہاد کرنے والا۔
+                                    </li>
+                                    <li> مسافر جو حالت سفر میں تنگدست ہو گیا ہو۔
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                مصرف زکوة
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>مصرف زکوٰۃ: انسانی معاشرے کا تیسرا طبقہ جو غربت کی شرعی لکیر سے نیچے جیتا ہے،بشر طیکہ
+                                    :
+                                </p>
+                                <br>
+                                <ol>
+                                    <li>غیر مسلم نہ ہو۔ (غیر مسلم کو صرف نفلی صدقہ دیا جا سکتا ہے)</li>
+                                    <li>حضور اکرم علی الم کے خاندان (یعنی ہاشمی ، سید) سے نہ ہو۔</li>
+                                    <li>زکوٰۃ دینے والے کا قریبی رشتہ دار یا قریبی تعلق دار نہ ہو۔قریبی رشتہ دار جن سے
+                                        انسان
+                                        پیدا ہوا: والد ، والده، دادا، دادی، نانا، نانی ......</li>
+                                    <br>
+                                    <p>یا جو انسان سے پیدا ہوئے : بیٹا، بیٹی، پوتا، پوتی، نواسہ ، نواسی ....
+                                        قریبی تعلق دار: میاں بیوی (ایک دوسرے کو زکوٰۃ نہیں دے سکتے)
+                                    </p>
+                                </ol>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="row d-flex" dir="ltr">
+                                    <div class="col flex-row text-center">
+                                        <div class="btn-container">
+                                            <button class="btn btn-primary w-50 my-1">کافر ( غیر مسلم)
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">سید / باشی
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">میاں ، بیوی
+                                            </button>
+                                            <button class="btn btn-primary w-50 my-1">اصول و فروع
+                                                ماں باپ دادا، دادی، نانا، نانی اپنی اولاد اور اولاد کی اولاد
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex align-items-center flex-row-reverse">
+                                        <button class="btn btn-primary w-75 h-75">یہ افراد خواہ کس قدرغریب اور فقیر ہوں
+                                            <br>
+                                            (یعنی صاحب نصاب نہہوں)پھر بھی ان کو زکوٰۃنہیں دی جاسکتی
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <footer class="text-center mt-3">
         <p>Copyright 2023 &#169

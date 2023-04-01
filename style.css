@@ -41,6 +41,10 @@ input[type=text] {
     -moz-appearance: textfield;
 }
 
+select, option {
+    padding: 1em;
+}
+
 .table {
     text-align: end;
 }
@@ -53,7 +57,7 @@ tr td {
 }
 
 input[type=text] {
-    /* width: 60px; */
+    /* width: 15vw; */
     font-family: "arial";
     text-align: center;
 }
@@ -134,5 +138,143 @@ footer a {
     #toPrint {
         position: static !important;
         overflow: visible !important;
+    }
+}
+
+/* -------------------- masrafe zakat buttons etc --------------- */
+
+.btn-container {
+    position: relative;
+}
+.btn-continer {
+    position: relative;
+}
+
+.w-50 {
+    position: relative;
+    z-index: 1;
+}
+
+.w-50::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    /* half the width of the line */
+    /* transform: translateY(-50%); */
+    height: 2px;
+    width: 15vw;
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    z-index: -1;
+    /* send the line behind the button */
+}
+
+.btn-contaner {
+    position: relative;
+}
+.btn-contaner:before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    bottom: 0;
+    right: 0%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #007bff;
+    height: 69%;
+    /* Bootstrap primary color */
+}
+
+.btn-container {
+    position: relative;
+}
+.bt-container {
+    position: relative;
+}
+.btn-containerr:before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    bottom: 0;
+    right: 0%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #007bff;
+    height: 71%;
+    /* Bootstrap primary color */
+}
+.bt-container:before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    bottom: 0;
+    right: 0%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #007bff;
+    height: 73%;
+    /* Bootstrap primary color */
+}
+
+.btn-container:before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    bottom: 0;
+    right: 0%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #007bff;
+    height: 73%;
+    /* Bootstrap primary color */
+}
+
+
+.w-75 {
+    position: relative;
+    z-index: 1;
+}
+
+.w-75::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 89%;
+    /* half the width of the line */
+    /* transform: translateY(-50%); */
+    height: 1.5px;
+    width: 15vw;
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    z-index: -8;
+    /* send the line behind the button */
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .w-75::after{
+        right: 100%;
+    }
+    .btn-container:before {
+        top: 22px;
+        height: 67%;
+    }
+    .btn-contaner:before {
+        top: 31px;
+        height: 63%;
+    }
+    .btn-continer:before {
+        /* top: 31px; */
+        height: 63%;
+    }
+    .btn-containerr:before {
+        top: 31px;
+        height: 66%;
+    }
+    .bt-container:before {
+        height: 63%;
+        top: 35px;
     }
 }
