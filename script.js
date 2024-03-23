@@ -55,7 +55,7 @@ function save() {
     printWindow.document.head.innerHTML = document.head.innerHTML;
     // Change the href of the link tag with rel="stylesheet"
     let link = printWindow.document.querySelector('link[href="style.css"]');
-    link.href = 'https://lfgraphics.github.io/zakat-calculator/style.css';
+    link.href = 'https://khadimemillat.github.io/zakat-calculator/style.css';
     // Set the values of the input fields in the new window
     let inputFields = document.getElementsByTagName('input');
 
